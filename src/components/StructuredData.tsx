@@ -22,21 +22,21 @@ interface LocalBusinessSchemaProps {
 
 export function LocalBusinessSchema({
   name = 'Adriatic Padel Club',
-  description = 'Premium padel klub u Kaštelima, Split. Vrhunski tereni, profesionalni treneri i padel akademija.',
+  description = 'Premium padel klub u Planu blizu Trogira. Vrhunski indoor tereni, profesionalni treneri i padel akademija.',
   image = 'https://adriaticpadelclub.hr/og-image.jpg',
-  telephone = '+385 99 123 4567',
-  email = 'info@adriaticpadelclub.hr',
+  telephone = '098222063',
+  email = 'info@adriaticpadelklub.hr',
   address = {
-    streetAddress: 'Ulica padela 1',
-    addressLocality: 'Kaštela',
-    postalCode: '21212',
+    streetAddress: 'Put Stombrata 18',
+    addressLocality: 'Trogir',
+    postalCode: '21220',
     addressCountry: 'HR',
   },
   geo = {
-    latitude: 43.5513,
-    longitude: 16.3271,
+    latitude: 43.5165,
+    longitude: 16.2511,
   },
-  openingHours = ['Mo-Fr 07:00-22:00', 'Sa 08:00-21:00', 'Su 08:00-20:00'],
+  openingHours = ['Mo-Su 08:00-24:00'],
   priceRange = '€€',
 }: LocalBusinessSchemaProps) {
   const schema = {

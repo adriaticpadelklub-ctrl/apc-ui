@@ -6,13 +6,13 @@ import { Button } from '@/components/ui/Button';
 import { PageHero } from '@/components/sections/PageHero';
 
 const contactInfo = {
-  address: 'Ulica padela 1, 21212 Kaštela, Hrvatska',
-  phone: '+385 99 123 4567',
-  email: 'info@adriaticpadelclub.hr',
+  address: 'Put Stombrata 18, 21220 Trogir, Croatia',
+  phone: '098222063',
+  email: 'info@adriaticpadelklub.hr',
   workingHours: {
-    weekdays: '07:00 - 22:00',
-    saturday: '08:00 - 21:00',
-    sunday: '08:00 - 20:00',
+    weekdays: '08:00 - 24:00',
+    saturday: '08:00 - 24:00',
+    sunday: '08:00 - 24:00',
   },
 };
 
@@ -282,7 +282,7 @@ export default function ContactPage() {
               {/* Map */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46258.91789892!2d16.3271!3d43.5513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355dc1a1d21f45%3A0xa1c1e0d7e8e5b7cc!2sKa%C5%A1tela%2C%20Croatia!5e0!3m2!1sen!2sus!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23117.85!2d16.2511!3d43.5165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355e6b26b0d9f3%3A0x3c5d0e3e3e3e3e3e!2sTrogir%2C%20Croatia!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
@@ -330,7 +330,7 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="/akademija"
+              href="/"
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-lime hover:text-teal transition-all duration-300 group"
             >
               <div className="w-16 h-16 rounded-xl bg-lime/20 group-hover:bg-teal/20 flex items-center justify-center mx-auto mb-4 transition-colors">
@@ -342,24 +342,24 @@ export default function ContactPage() {
                 Prijavi se na trening
               </h3>
               <p className="text-white/70 group-hover:text-teal/70 text-sm transition-colors">
-                Pogledaj programe akademije
+                Pogledaj programe treninga
               </p>
             </a>
 
             <a
-              href="/clanstvo"
+              href="/o-nama"
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-lime hover:text-teal transition-all duration-300 group"
             >
               <div className="w-16 h-16 rounded-xl bg-lime/20 group-hover:bg-teal/20 flex items-center justify-center mx-auto mb-4 transition-colors">
                 <svg className="w-8 h-8 text-lime group-hover:text-teal transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <h3 className="font-heading text-xl font-bold text-white group-hover:text-teal mb-2 transition-colors">
-                Postani član
+                Saznaj više
               </h3>
               <p className="text-white/70 group-hover:text-teal/70 text-sm transition-colors">
-                Pogledaj opcije članstva
+                O nama i našem klubu
               </p>
             </a>
           </div>

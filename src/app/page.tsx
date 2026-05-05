@@ -1,4 +1,4 @@
-import { Hero, About, Courts, Services, Coaches, Testimonials, CTA, FAQ } from '@/components/sections';
+import { Hero, About, Courts, Services, FAQ } from '@/components/sections';
 
 export default function Home() {
   return (
@@ -14,15 +14,6 @@ export default function Home() {
 
       {/* Services/Features Section - Light Theme */}
       <Services />
-
-      {/* Coaches Section - Dark Theme */}
-      <Coaches />
-
-      {/* Testimonials Section - Light Theme */}
-      <Testimonials />
-
-      {/* CTA/Membership Preview Section - Dark Theme with Lime Accent */}
-      <CTA />
 
       {/* FAQ Accordion Section - Light Theme */}
       <FAQ />

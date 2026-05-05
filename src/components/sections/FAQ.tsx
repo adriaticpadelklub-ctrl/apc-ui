@@ -23,12 +23,7 @@ const faqItems: FAQItem[] = [
   {
     question: 'Kako mogu rezervirati teren?',
     answer:
-      'Terene možete rezervirati putem naše online platforme Playtomic, telefonom ili osobno u klubu. Rezervacije su moguće do 7 dana unaprijed, a članovi imaju prioritet pri rezervaciji najpopularnijih termina.',
-  },
-  {
-    question: 'Što je uključeno u članarinu?',
-    answer:
-      'Ovisno o paketu, članarina uključuje pristup terenima, korištenje opreme (reketi, loptice), popuste na treninge i turnire, te pristup ekskluzivnim događanjima kluba. Godišnji članovi dobivaju i dodatne pogodnosti poput besplatnih turnira.',
+      'Terene možete rezervirati putem naše online platforme Playtomic, telefonom ili osobno u klubu. Rezervacije su moguće do 14 dana unaprijed, a članovi imaju prioritet pri rezervaciji najpopularnijih termina.',
   },
   {
     question: 'Mogu li doći igrati bez opreme?',

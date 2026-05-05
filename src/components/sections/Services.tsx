@@ -17,7 +17,7 @@ const services: Service[] = [
   {
     title: 'Rezervacija Terena',
     description:
-      'Rezervirajte teren online u samo nekoliko klikova. Dostupni termini 7 dana unaprijed.',
+      'Rezervirajte teren online u samo nekoliko klikova. Dostupni termini 14 dana unaprijed.',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path
@@ -28,7 +28,7 @@ const services: Service[] = [
         />
       </svg>
     ),
-    href: '/tereni',
+    href: '/',
     color: 'from-lime/20 to-lime/5',
   },
   {
@@ -45,7 +45,7 @@ const services: Service[] = [
         />
       </svg>
     ),
-    href: '/akademija',
+    href: '/',
     color: 'from-teal/20 to-teal/5',
   },
   {
@@ -62,7 +62,7 @@ const services: Service[] = [
         />
       </svg>
     ),
-    href: '/akademija',
+    href: '/',
     color: 'from-lime/20 to-lime/5',
   },
   {
@@ -79,7 +79,7 @@ const services: Service[] = [
         />
       </svg>
     ),
-    href: '/tereni',
+    href: '/',
     color: 'from-teal/20 to-teal/5',
   },
 ];

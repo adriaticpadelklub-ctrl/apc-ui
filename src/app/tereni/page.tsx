@@ -7,10 +7,10 @@ import { FAQ } from '@/components/sections/FAQ';
 export const metadata: Metadata = {
   title: 'Tereni',
   description:
-    'Pogledajte naše vrhunske padel terene u Kaštelima. 6 profesionalnih terena s LED rasvjetom, klimatizacijom i najmodernijom opremom. Rezervirajte online.',
+    'Pogledajte naše vrhunske padel terene u Planu blizu Trogira. 6 profesionalnih indoor terena s LED rasvjetom, klimatizacijom i najmodernijom opremom. Rezervirajte online.',
   openGraph: {
     title: 'Tereni | Adriatic Padel Club',
-    description: 'Vrhunski padel tereni u Kaštelima. Rezervirajte online.',
+    description: 'Vrhunski padel tereni u Planu blizu Trogira. Rezervirajte online.',
   },
 };
 
@@ -50,42 +50,42 @@ const courts: Court[] = [
   },
   {
     id: 3,
-    name: 'Teren 3 - Outdoor',
-    type: 'outdoor',
+    name: 'Teren 3 - Indoor',
+    type: 'indoor',
     surface: 'Umjetna trava',
     dimensions: '20m x 10m',
     image: '/images/vincenzo-morelli-aYTK2HNocNw-unsplash.jpg',
-    features: ['Noćna rasvjeta', 'Pogled na more', 'Besplatan parking'],
+    features: ['LED rasvjeta', 'Klimatizacija', 'Besplatan parking'],
     pricePerHour: 25,
   },
   {
     id: 4,
-    name: 'Teren 4 - Outdoor',
-    type: 'outdoor',
+    name: 'Teren 4 - Indoor',
+    type: 'indoor',
     surface: 'Umjetna trava',
     dimensions: '20m x 10m',
     image: '/images/vincenzo-morelli-rg2ilw8QSdw-unsplash.jpg',
-    features: ['Noćna rasvjeta', 'Za početnike', 'Obiteljski prijateljski'],
+    features: ['LED rasvjeta', 'Klimatizacija', 'Za početnike', 'Obiteljski prijateljski'],
     pricePerHour: 25,
   },
   {
     id: 5,
-    name: 'Teren 5 - Outdoor Premium',
-    type: 'outdoor',
+    name: 'Teren 5 - Indoor Premium',
+    type: 'indoor',
     surface: 'Umjetna trava PRO',
     dimensions: '20m x 10m',
     image: '/images/cal-gao-CA3laY8sok0-unsplash.jpg',
-    features: ['LED rasvjeta', 'Za turnire', 'Tribine', 'VIP pristup'],
+    features: ['LED rasvjeta', 'Klimatizacija', 'Za turnire', 'Tribine', 'VIP pristup'],
     pricePerHour: 28,
   },
   {
     id: 6,
-    name: 'Teren 6 - Training Court',
-    type: 'outdoor',
+    name: 'Teren 6 - Indoor Training',
+    type: 'indoor',
     surface: 'Umjetna trava',
     dimensions: '20m x 10m',
     image: '/images/vincenzo-morelli-Cj35lHL4atY-unsplash.jpg',
-    features: ['Noćna rasvjeta', 'Za grupne treninge', 'Video analiza'],
+    features: ['LED rasvjeta', 'Klimatizacija', 'Za grupne treninge', 'Video analiza'],
     pricePerHour: 22,
   },
 ];
@@ -104,7 +104,7 @@ export default function CourtsPage() {
     <>
       <PageHero
         title="Naši Tereni"
-        subtitle="6 profesionalnih terena opremljenih najmodernijom tehnologijom za vrhunsko padel iskustvo."
+        subtitle="6 profesionalnih indoor terena opremljenih najmodernijom tehnologijom za vrhunsko padel iskustvo."
         backgroundImage="/images/vincenzo-morelli-Cj35lHL4atY-unsplash.jpg"
       />
 
@@ -282,19 +282,19 @@ export default function CourtsPage() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-3 border-b border-teal/10">
                   <span className="text-teal">Ponedjeljak - Petak</span>
-                  <span className="font-semibold text-teal">07:00 - 22:00</span>
+                  <span className="font-semibold text-teal">08:00 - 24:00</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-teal/10">
                   <span className="text-teal">Subota</span>
-                  <span className="font-semibold text-teal">08:00 - 21:00</span>
+                  <span className="font-semibold text-teal">08:00 - 24:00</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-teal/10">
                   <span className="text-teal">Nedjelja</span>
-                  <span className="font-semibold text-teal">08:00 - 20:00</span>
+                  <span className="font-semibold text-teal">08:00 - 24:00</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
                   <span className="text-teal">Praznici</span>
-                  <span className="font-semibold text-teal">09:00 - 18:00</span>
+                  <span className="font-semibold text-teal">08:00 - 24:00</span>
                 </div>
               </div>
 

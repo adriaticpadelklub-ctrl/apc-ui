@@ -36,14 +36,14 @@
 /* Tailwind v4 Theme Configuration */
 @theme inline {
   /* Brand Colors */
-  --color-lime: #C4E52D;
-  --color-lime-dark: #A8C525;
-  --color-lime-light: #D4F04D;
-  --color-teal: #013B3B;
-  --color-teal-light: #025252;
-  --color-teal-dark: #012929;
-  --color-beige: #EAE5E6;
-  --color-beige-dark: #D8D3D4;
+  --color-lime: #f6b909;
+  --color-lime-dark: #d9a308;
+  --color-lime-light: #f8c836;
+  --color-teal: #383e42;
+  --color-teal-light: #4a5258;
+  --color-teal-dark: #2a2f32;
+  --color-beige: #eae5e6;
+  --color-beige-dark: #d8d3d4;
   --color-white: #FFFFFF;
   --color-black: #0A0A0A;
 

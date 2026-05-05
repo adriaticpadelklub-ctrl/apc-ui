@@ -10,15 +10,13 @@ const navigation = {
     { name: 'Početna', href: '/' },
     { name: 'O nama', href: '/o-nama' },
     { name: 'Tereni', href: '/tereni' },
-    { name: 'Akademija', href: '/akademija' },
-    { name: 'Članstvo', href: '/clanstvo' },
     { name: 'Kontakt', href: '/kontakt' },
   ],
   services: [
-    { name: 'Rezervacija terena', href: '/tereni' },
-    { name: 'Privatni treninzi', href: '/akademija' },
-    { name: 'Grupni treninzi', href: '/akademija' },
-    { name: 'Turniri', href: '/tereni' },
+    { name: 'Rezervacija terena', href: '/' },
+    { name: 'Privatni treninzi', href: '/' },
+    { name: 'Grupni treninzi', href: '/' },
+    { name: 'Turniri', href: '/' },
   ],
   legal: [
     { name: 'Privatnost', href: '/privatnost' },
@@ -57,12 +55,12 @@ const socialLinks = [
 ];
 
 const contactInfo = {
-  address: 'Ulica padela 1, 21212 Kaštela, Hrvatska',
-  phone: '+385 99 123 4567',
-  email: 'info@adriaticpadelclub.hr',
+  address: 'Put Stombrata 18, 21220 Trogir, Croatia',
+  phone: '098222063',
+  email: 'info@adriaticpadelklub.hr',
   workingHours: {
-    weekdays: '07:00 - 22:00',
-    weekend: '08:00 - 21:00',
+    weekdays: '08:00 - 24:00',
+    weekend: '08:00 - 24:00',
   },
 };
 

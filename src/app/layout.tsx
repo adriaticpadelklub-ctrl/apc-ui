@@ -15,22 +15,22 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://adriaticpadelclub.hr'),
   title: {
-    default: 'Adriatic Padel Club | Premium Padel u Kaštelima',
+    default: 'Adriatic Padel Club | Premium Padel u Trogiru',
     template: '%s | Adriatic Padel Club',
   },
   description:
-    'Premium padel iskustvo na obali Jadrana. Adriatic Padel Club u Kaštelima nudi vrhunske terene, profesionalne trenere i padel akademiju za sve razine igrača.',
+    'Premium padel iskustvo na obali Jadrana. Adriatic Padel Club u Planu blizu Trogira nudi vrhunske indoor terene, profesionalne trenere i padel akademiju za sve razine igrača.',
   keywords: [
     'padel',
-    'padel Kaštela',
-    'padel Split',
+    'padel Trogir',
+    'padel Plano',
     'padel klub',
     'padel teren',
     'padel akademija',
     'padel treniranje',
     'padel Hrvatska',
     'tenis',
-    'sport Kaštela',
+    'sport Trogir',
   ],
   authors: [{ name: 'Adriatic Padel Club' }],
   creator: 'Adriatic Padel Club',
@@ -45,21 +45,21 @@ export const metadata: Metadata = {
     locale: 'hr_HR',
     url: 'https://adriaticpadelclub.hr',
     siteName: 'Adriatic Padel Club',
-    title: 'Adriatic Padel Club | Premium Padel u Kaštelima',
+    title: 'Adriatic Padel Club | Premium Padel u Trogiru',
     description:
-      'Premium padel iskustvo na obali Jadrana. Vrhunski tereni, profesionalni treneri i padel akademija.',
+      'Premium padel iskustvo na obali Jadrana. Vrhunski indoor tereni, profesionalni treneri i padel akademija.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Adriatic Padel Club - Premium Padel Kaštela',
+        alt: 'Adriatic Padel Club - Premium Padel Trogir',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adriatic Padel Club | Premium Padel u Kaštelima',
+    title: 'Adriatic Padel Club | Premium Padel u Trogiru',
     description: 'Premium padel iskustvo na obali Jadrana.',
     images: ['/og-image.jpg'],
   },
@@ -90,7 +90,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#013B3B" />
+        <meta name="theme-color" content="#383e42" />
       </head>
       <body className="min-h-full flex flex-col bg-white text-teal">
         <LocalBusinessSchema />

@@ -13,8 +13,6 @@ const navigation = [
   { name: 'Početna', href: '/' },
   { name: 'O nama', href: '/o-nama' },
   { name: 'Tereni', href: '/tereni' },
-  { name: 'Akademija', href: '/akademija' },
-  { name: 'Članstvo', href: '/clanstvo' },
   { name: 'Kontakt', href: '/kontakt' },
 ];
 
@@ -220,11 +218,11 @@ export function Header() {
               </Button>
 
               <div className="mobile-nav-item mt-6 flex items-center gap-6 text-teal/60 text-sm">
-                <a href="tel:+385991234567" className="hover:text-teal transition-colors">
-                  +385 99 123 4567
+                <a href="tel:098222063" className="hover:text-teal transition-colors">
+                  098222063
                 </a>
-                <a href="mailto:info@adriaticpadelclub.hr" className="hover:text-teal transition-colors">
-                  info@adriaticpadelclub.hr
+                <a href="mailto:info@adriaticpadelklub.hr" className="hover:text-teal transition-colors">
+                  info@adriaticpadelklub.hr
                 </a>
               </div>
             </div>

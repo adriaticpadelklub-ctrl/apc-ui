@@ -15,8 +15,8 @@ interface HeroProps {
 }
 
 export function Hero({
-  title = 'Lovi Loptu, Ne Granice.',
-  subtitle = 'Premium padel iskustvo na obali Jadrana',
+  title = 'Uvijek se igra',
+  subtitle = 'Premium padel iskustvo u Planu blizu Trogira',
   showScrollIndicator = true,
 }: HeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);

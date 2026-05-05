@@ -2,16 +2,15 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { PageHero } from '@/components/sections/PageHero';
-import { TeamSection } from '@/components/sections/TeamSection';
 import { GallerySection } from '@/components/sections/GallerySection';
 
 export const metadata: Metadata = {
   title: 'O nama',
   description:
-    'Saznajte više o Adriatic Padel Clubu - našoj priči, misiji i timu. Smješteni u srcu Kaštela, posvećeni smo razvoju padel zajednice na Jadranu.',
+    'Saznajte više o Adriatic Padel Clubu - našoj priči i misiji. Smješteni u Planu blizu Trogira, posvećeni smo razvoju padel zajednice na Jadranu.',
   openGraph: {
     title: 'O nama | Adriatic Padel Club',
-    description: 'Saznajte više o Adriatic Padel Clubu - našoj priči, misiji i timu.',
+    description: 'Saznajte više o Adriatic Padel Clubu - našoj priči i misiji.',
   },
 };
 
@@ -55,10 +54,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2019', title: 'Osnivanje kluba', description: 'Otvorili smo vrata s 2 terena i velikom vizijom.' },
-  { year: '2020', title: 'Proširenje', description: 'Dodali smo još 2 terena i pokrenuli akademiju.' },
-  { year: '2022', title: 'Indoor tereni', description: 'Otvorili smo 2 indoor terena za cjelogodišnju igru.' },
-  { year: '2024', title: '500+ članova', description: 'Postali smo najveći padel klub u regiji.' },
+  { year: '2026', title: 'Otvaranje centra', description: 'Otvorili smo moderne indoor terene.' },
 ];
 
 export default function AboutPage() {
@@ -66,7 +62,7 @@ export default function AboutPage() {
     <>
       <PageHero
         title="Naša priča"
-        subtitle="Saznajte više o Adriatic Padel Clubu, našoj misiji i timu koji stoji iza svega."
+        subtitle="Saznajte više o Adriatic Padel Clubu i našoj misiji."
         backgroundImage="/images/vincenzo-morelli-WnxmzCNuDmU-unsplash.jpg"
       />
 
@@ -84,13 +80,14 @@ export default function AboutPage() {
               <div className="space-y-4 text-teal/70 leading-relaxed">
                 <p>
                   Adriatic Padel Club rođen je iz strasti prema padelu i želje da ovaj
-                  dinamični sport dovedemo na obale Jadrana. Osnovan 2019. godine u
-                  Kaštelima, naš klub je brzo prerastao u središte padel zajednice u regiji.
+                  dinamični sport dovedemo na obale Jadrana. Smješteni u Planu blizu Trogira,
+                  naš klub je središte padel zajednice u regiji.
                 </p>
                 <p>
-                  Ono što je započelo s dva terena i grupom entuzijasta, danas je
-                  preraslo u moderan sportski kompleks s šest profesionalnih terena,
-                  timom certificiranih trenera i zajednicom od preko 500 aktivnih članova.
+                  Iza kluba stoje dva osnivača - srebrni Vatreni i višestruki prvak Hrvatske
+                  u padelu. Njihovo iskustvo i strast čine temelj našeg kluba. Uz moderan
+                  sportski kompleks s šest profesionalnih indoor terena i timom certificiranih
+                  trenera, pružamo vrhunsko padel iskustvo.
                 </p>
                 <p>
                   Naša misija je jednostavna: učiniti padel dostupnim svima, od potpunih
@@ -174,9 +171,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Team Section */}
-      <TeamSection />
 
       {/* Gallery Section */}
       <GallerySection />

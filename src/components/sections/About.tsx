@@ -28,10 +28,9 @@ function StatItem({ value, suffix = '', label }: StatProps) {
 }
 
 const stats = [
-  { value: 6, suffix: '', label: 'Terena' },
-  { value: 5, suffix: '+', label: 'Godina iskustva' },
-  { value: 500, suffix: '+', label: 'Aktivnih članova' },
-  { value: 20, suffix: '+', label: 'Turnira godišnje' },
+  { value: 10, suffix: '+', label: 'Godina iskustva' },
+  { value: 3, suffix: '+', label: 'Profesionalnih trenera' },
+  { value: 15, suffix: '+', label: 'Turnira godišnje' },
 ];
 
 export function About() {
@@ -138,7 +137,7 @@ export function About() {
               Dobrodošli u Adriatic Padel Club
             </h2>
             <p className="animate-item text-lg text-teal/70 mb-6 leading-relaxed">
-              Smješteni u srcu Kaštela, Adriatic Padel Club je premier destinacija za padel
+              Smješteni u Planu blizu Trogira, Adriatic Padel Club je premier destinacija za padel
               entuzijaste svih razina. Naš klub kombinira vrhunske terene, profesionalne
               trenere i prijateljsku atmosferu kako bi vam pružili nezaboravno padel iskustvo.
             </p>
@@ -151,9 +150,6 @@ export function About() {
               <Button href="/o-nama" variant="secondary">
                 Više o nama
               </Button>
-              <Button href="/akademija" variant="outline">
-                Naša akademija
-              </Button>
             </div>
           </div>
         </div>
@@ -161,7 +157,7 @@ export function About() {
         {/* Stats */}
         <div className="mt-20 pt-16 border-t border-teal/10">
           <div className="bg-teal rounded-2xl py-12 px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-3 gap-8">
               {stats.map((stat, index) => (
                 <StatItem
                   key={index}
