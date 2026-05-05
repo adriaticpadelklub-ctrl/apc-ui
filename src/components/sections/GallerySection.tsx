@@ -6,28 +6,23 @@ import { gsap } from '@/lib/gsap';
 
 const galleryImages = [
   {
-    src: '/images/vincenzo-morelli-Cj35lHL4atY-unsplash.jpg',
+    src: '/images/new-images/apc-court.jpg',
     alt: 'Padel teren',
     span: 'col-span-2 row-span-2',
   },
   {
-    src: '/images/vincenzo-morelli-WnxmzCNuDmU-unsplash.jpg',
-    alt: 'Igrači na terenu',
+    src: '/images/new-images/10c457bd-486d-4b67-b30a-1e0554e3dbba.jpeg',
+    alt: 'Klub iznutra',
+    span: 'col-span-2 row-span-1',
+  },
+  {
+    src: '/images/new-images/30a7590f-9de0-44a8-ad2a-539077be3b6d.jpeg',
+    alt: 'Padel tereni',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/images/vincenzo-morelli-aYTK2HNocNw-unsplash.jpg',
-    alt: 'Padel reket',
-    span: 'col-span-1 row-span-1',
-  },
-  {
-    src: '/images/vincenzo-morelli-rg2ilw8QSdw-unsplash.jpg',
-    alt: 'Turnir',
-    span: 'col-span-1 row-span-1',
-  },
-  {
-    src: '/images/cal-gao-CA3laY8sok0-unsplash.jpg',
-    alt: 'Club house',
+    src: '/images/new-images/df590561-f57a-4c65-bd6b-875454172d07.jpeg',
+    alt: 'Adriatic Padel Club',
     span: 'col-span-1 row-span-1',
   },
 ];

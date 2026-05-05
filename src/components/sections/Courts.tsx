@@ -7,12 +7,12 @@ import { gsap } from '@/lib/gsap';
 const BOOKING_URL = 'https://playtomic.io';
 
 const courts = [
-  { id: 1, name: 'Teren 1', type: 'Premium Indoor', features: ['LED rasvjeta', 'Panoramski pogled'] },
-  { id: 2, name: 'Teren 2', type: 'Premium Indoor', features: ['LED rasvjeta', 'Za natjecanja'] },
-  { id: 3, name: 'Teren 3', type: 'Indoor', features: ['LED rasvjeta', 'Za početnike'] },
-  { id: 4, name: 'Teren 4', type: 'Indoor', features: ['LED rasvjeta', 'Obiteljski'] },
-  { id: 5, name: 'Teren 5', type: 'Premium Indoor', features: ['LED rasvjeta', 'Za turnire'] },
-  { id: 6, name: 'Teren 6', type: '1v1 Teren', features: ['LED rasvjeta', 'Video analiza'] },
+  { id: 1, name: 'Teren 1', type: 'Premium Indoor', features: ['Full panoramic'] },
+  { id: 2, name: 'Teren 2', type: 'Premium Indoor', features: ['Full panoramic'] },
+  { id: 3, name: 'Teren 3', type: 'Premium Indoor', features: ['Full panoramic'] },
+  { id: 4, name: 'Teren 4', type: 'Premium Indoor', features: ['Full panoramic'] },
+  { id: 5, name: 'Teren 5', type: 'Premium Indoor', features: ['Full panoramic'] },
+  { id: 6, name: 'Teren 6', type: 'Premium 1v1 Teren', features: ['Full panoramic'] },
 ];
 
 const features = [
