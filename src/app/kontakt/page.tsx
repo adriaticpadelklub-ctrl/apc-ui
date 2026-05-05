@@ -7,7 +7,7 @@ import { PageHero } from '@/components/sections/PageHero';
 
 const contactInfo = {
   address: 'Put Stombrata 18, 21220 Trogir, Croatia',
-  phone: '098222063',
+  phone: '+38598222063',
   email: 'info@adriaticpadelklub.hr',
   workingHours: {
     weekdays: '08:00 - 24:00',
