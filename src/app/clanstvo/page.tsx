@@ -148,7 +148,7 @@ export default function MembershipPage() {
       <PageHero
         title="Članstvo"
         subtitle="Odaberite plan koji odgovara vašem stilu igre i uživajte u ekskluzivnim pogodnostima."
-        backgroundImage="/images/vincenzo-morelli-rg2ilw8QSdw-unsplash.jpg"
+        backgroundImage="/images/hero-player.jpg"
       />
 
       {/* Pricing Section */}

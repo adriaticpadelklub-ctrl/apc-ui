@@ -7,7 +7,7 @@ import { FAQ } from '@/components/sections/FAQ';
 export const metadata: Metadata = {
   title: 'Tereni',
   description:
-    'Pogledajte naše vrhunske padel terene u Planu blizu Trogira. 6 profesionalnih indoor terena s LED rasvjetom, klimatizacijom i najmodernijom opremom. Rezervirajte online.',
+    'Pogledajte naše vrhunske padel terene u Planu blizu Trogira. 6 premium indoor terena s LED rasvjetom i najmodernijom opremom. Rezervirajte online.',
   openGraph: {
     title: 'Tereni | Adriatic Padel Club',
     description: 'Vrhunski padel tereni u Planu blizu Trogira. Rezervirajte online.',
@@ -35,7 +35,7 @@ const courts: Court[] = [
     surface: 'Umjetna trava PRO',
     dimensions: '20m x 10m',
     image: '/images/vincenzo-morelli-Cj35lHL4atY-unsplash.jpg',
-    features: ['LED rasvjeta', 'Klimatizacija', 'Panoramski pogled', 'Tribine za 50 gledatelja'],
+    features: ['LED rasvjeta', 'Panoramski pogled', 'Tribine za 50 gledatelja'],
     pricePerHour: 30,
   },
   {
@@ -45,7 +45,7 @@ const courts: Court[] = [
     surface: 'Umjetna trava PRO',
     dimensions: '20m x 10m',
     image: '/images/vincenzo-morelli-WnxmzCNuDmU-unsplash.jpg',
-    features: ['LED rasvjeta', 'Klimatizacija', 'Live streaming', 'Za natjecanja'],
+    features: ['LED rasvjeta', 'Live streaming', 'Za natjecanja'],
     pricePerHour: 30,
   },
   {
@@ -55,7 +55,7 @@ const courts: Court[] = [
     surface: 'Umjetna trava',
     dimensions: '20m x 10m',
     image: '/images/vincenzo-morelli-aYTK2HNocNw-unsplash.jpg',
-    features: ['LED rasvjeta', 'Klimatizacija', 'Besplatan parking'],
+    features: ['LED rasvjeta', 'Besplatan parking'],
     pricePerHour: 25,
   },
   {
@@ -65,7 +65,7 @@ const courts: Court[] = [
     surface: 'Umjetna trava',
     dimensions: '20m x 10m',
     image: '/images/vincenzo-morelli-rg2ilw8QSdw-unsplash.jpg',
-    features: ['LED rasvjeta', 'Klimatizacija', 'Za početnike', 'Obiteljski prijateljski'],
+    features: ['LED rasvjeta', 'Za početnike', 'Obiteljski prijateljski'],
     pricePerHour: 25,
   },
   {
@@ -75,17 +75,17 @@ const courts: Court[] = [
     surface: 'Umjetna trava PRO',
     dimensions: '20m x 10m',
     image: '/images/cal-gao-CA3laY8sok0-unsplash.jpg',
-    features: ['LED rasvjeta', 'Klimatizacija', 'Za turnire', 'Tribine', 'VIP pristup'],
+    features: ['LED rasvjeta', 'Za turnire', 'Tribine', 'VIP pristup'],
     pricePerHour: 28,
   },
   {
     id: 6,
-    name: 'Teren 6 - Indoor Training',
+    name: 'Teren 6 - 1v1 Teren',
     type: 'indoor',
     surface: 'Umjetna trava',
     dimensions: '20m x 10m',
     image: '/images/vincenzo-morelli-Cj35lHL4atY-unsplash.jpg',
-    features: ['LED rasvjeta', 'Klimatizacija', 'Za grupne treninge', 'Video analiza'],
+    features: ['LED rasvjeta', 'Za solo vježbu', 'Video analiza'],
     pricePerHour: 22,
   },
 ];
@@ -104,8 +104,8 @@ export default function CourtsPage() {
     <>
       <PageHero
         title="Naši Tereni"
-        subtitle="6 profesionalnih indoor terena opremljenih najmodernijom tehnologijom za vrhunsko padel iskustvo."
-        backgroundImage="/images/vincenzo-morelli-Cj35lHL4atY-unsplash.jpg"
+        subtitle="6 premium indoor terena opremljenih najmodernijom tehnologijom za vrhunsko padel iskustvo."
+        backgroundImage="/images/hero-player.jpg"
       />
 
       {/* Courts Grid */}
@@ -130,30 +130,27 @@ export default function CourtsPage() {
                 key={court.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={court.image}
-                    alt={court.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div
-                    className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase ${
-                      court.type === 'indoor'
-                        ? 'bg-lime text-teal'
-                        : 'bg-white/90 text-teal'
-                    }`}
-                  >
-                    {court.type === 'indoor' ? 'Indoor' : 'Outdoor'}
+                <div className="relative p-6 bg-teal">
+                  <div className="flex items-center justify-between">
+                    <div className="w-14 h-14 rounded-xl bg-lime flex items-center justify-center">
+                      <span className="font-heading text-2xl font-bold text-teal">{court.id}</span>
+                    </div>
+                    <div
+                      className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${
+                        court.type === 'indoor'
+                          ? 'bg-white/20 text-white'
+                          : 'bg-white/90 text-teal'
+                      }`}
+                    >
+                      {court.type === 'indoor' ? 'Indoor' : 'Outdoor'}
+                    </div>
                   </div>
+                  <h3 className="font-heading text-2xl font-bold text-white mt-4">
+                    {court.name}
+                  </h3>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-heading text-xl font-bold text-teal mb-2">
-                    {court.name}
-                  </h3>
-
                   <div className="flex items-center gap-4 text-sm text-teal/60 mb-4">
                     <span>{court.surface}</span>
                     <span>•</span>
@@ -298,13 +295,7 @@ export default function CourtsPage() {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-lime/10 rounded-xl">
-                <p className="text-sm text-teal">
-                  <strong>Napomena:</strong> Članovi imaju prioritet pri rezervaciji
-                  termina u udarnim satima (17:00 - 21:00).
-                </p>
-              </div>
-            </div>
+                          </div>
           </div>
         </div>
       </section>

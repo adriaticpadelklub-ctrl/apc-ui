@@ -7,12 +7,12 @@ import { gsap } from '@/lib/gsap';
 const BOOKING_URL = 'https://playtomic.io';
 
 const courts = [
-  { id: 1, name: 'Teren 1', type: 'Premium Indoor', features: ['LED rasvjeta', 'Klimatizacija', 'Panoramski pogled'] },
-  { id: 2, name: 'Teren 2', type: 'Premium Indoor', features: ['LED rasvjeta', 'Klimatizacija', 'Za natjecanja'] },
-  { id: 3, name: 'Teren 3', type: 'Indoor', features: ['LED rasvjeta', 'Klimatizacija', 'Za početnike'] },
-  { id: 4, name: 'Teren 4', type: 'Indoor', features: ['LED rasvjeta', 'Klimatizacija', 'Obiteljski'] },
-  { id: 5, name: 'Teren 5', type: 'Premium Indoor', features: ['LED rasvjeta', 'Klimatizacija', 'Za turnire'] },
-  { id: 6, name: 'Teren 6', type: 'Indoor Training', features: ['LED rasvjeta', 'Klimatizacija', 'Video analiza'] },
+  { id: 1, name: 'Teren 1', type: 'Premium Indoor', features: ['LED rasvjeta', 'Panoramski pogled'] },
+  { id: 2, name: 'Teren 2', type: 'Premium Indoor', features: ['LED rasvjeta', 'Za natjecanja'] },
+  { id: 3, name: 'Teren 3', type: 'Indoor', features: ['LED rasvjeta', 'Za početnike'] },
+  { id: 4, name: 'Teren 4', type: 'Indoor', features: ['LED rasvjeta', 'Obiteljski'] },
+  { id: 5, name: 'Teren 5', type: 'Premium Indoor', features: ['LED rasvjeta', 'Za turnire'] },
+  { id: 6, name: 'Teren 6', type: '1v1 Teren', features: ['LED rasvjeta', 'Video analiza'] },
 ];
 
 const features = [
@@ -25,16 +25,7 @@ const features = [
     title: 'LED Rasvjeta',
     description: 'Profesionalna rasvjeta za igru u bilo koje doba dana',
   },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-      </svg>
-    ),
-    title: 'Klimatizacija',
-    description: 'Ugodna temperatura tijekom cijele godine',
-  },
-  {
+    {
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -114,16 +105,16 @@ export function Courts() {
             Naši tereni
           </span>
           <h2 className="animate-header font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            6 profesionalnih indoor terena
+            6 premium indoor terena
           </h2>
           <p className="animate-header text-lg text-white/70 leading-relaxed">
-            Raspolažemo s 6 profesionalnih indoor terena opremljenih najmodernijom tehnologijom
+            Raspolažemo s 6 premium indoor terena opremljenih najmodernijom tehnologijom
             za vrhunsko padel iskustvo tijekom cijele godine.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div ref={featuresRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div ref={featuresRef} className="grid md:grid-cols-3 gap-6 mb-16">
           {features.map((feature, index) => (
             <div
               key={index}

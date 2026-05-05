@@ -176,8 +176,8 @@ export function Hero({
       {/* Background Image with Overlay */}
       <div ref={imageRef} className="absolute inset-0 -z-10">
         <Image
-          src="/images/vincenzo-morelli-Cj35lHL4atY-unsplash.jpg"
-          alt="Padel court at sunset"
+          src="/images/hero-court.jpg"
+          alt="Adriatic Padel Club indoor court"
           fill
           priority
           className="object-cover"

@@ -57,7 +57,7 @@ export default function ContactPage() {
       <PageHero
         title="Kontakt"
         subtitle="Imate pitanja? Slobodno nas kontaktirajte. Tu smo za vas."
-        backgroundImage="/images/cal-gao-CA3laY8sok0-unsplash.jpg"
+        backgroundImage="/images/hero-player.jpg"
       />
 
       {/* Contact Section */}

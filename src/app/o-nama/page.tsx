@@ -63,7 +63,7 @@ export default function AboutPage() {
       <PageHero
         title="Naša priča"
         subtitle="Saznajte više o Adriatic Padel Clubu i našoj misiji."
-        backgroundImage="/images/vincenzo-morelli-WnxmzCNuDmU-unsplash.jpg"
+        backgroundImage="/images/hero-player.jpg"
       />
 
       {/* Story Section */}

@@ -136,7 +136,7 @@ export default function AcademyPage() {
       <PageHero
         title="Padel Akademija"
         subtitle="Profesionalni treninzi za sve razine igrača. Od početnika do profesionalaca."
-        backgroundImage="/images/vincenzo-morelli-aYTK2HNocNw-unsplash.jpg"
+        backgroundImage="/images/hero-player.jpg"
       />
 
       {/* Programs Section */}

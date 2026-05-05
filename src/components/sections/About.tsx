@@ -22,7 +22,7 @@ function StatItem({ value, suffix = '', label }: StatProps) {
       <div className="font-heading text-4xl md:text-5xl font-bold text-lime mb-2">
         <span ref={counterRef}>0</span>
       </div>
-      <p className="text-white/70 text-sm uppercase tracking-wider">{label}</p>
+      <p className="text-white/70 text-xs sm:text-sm uppercase tracking-wider">{label}</p>
     </div>
   );
 }
@@ -157,7 +157,7 @@ export function About() {
         {/* Stats */}
         <div className="mt-20 pt-16 border-t border-teal/10">
           <div className="bg-teal rounded-2xl py-12 px-8">
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
               {stats.map((stat, index) => (
                 <StatItem
                   key={index}
