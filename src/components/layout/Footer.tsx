@@ -19,8 +19,8 @@ const navigation = {
     { name: 'Turniri', href: '/' },
   ],
   legal: [
-    { name: 'Privatnost', href: '/privatnost' },
-    { name: 'Uvjeti korištenja', href: '/uvjeti' },
+    { name: 'Politika privatnosti', href: '/politika-privatnosti' },
+    { name: 'Politika kolačića', href: '/politika-kolacica' },
   ],
 };
 

@@ -5,6 +5,8 @@ import { LenisProvider } from '@/hooks/useLenis';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { LocalBusinessSchema } from '@/components/StructuredData';
+import { CookieConsentProvider, CookieConsent } from '@/components/cookies';
+import { GoogleAnalytics } from '@/components/analytics';
 
 const inter = Inter({
   subsets: ['latin', 'latin-ext'],
@@ -94,11 +96,15 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white text-teal">
         <LocalBusinessSchema />
-        <LenisProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </LenisProvider>
+        <CookieConsentProvider>
+          <LenisProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </LenisProvider>
+          <CookieConsent />
+          <GoogleAnalytics />
+        </CookieConsentProvider>
       </body>
     </html>
   );
