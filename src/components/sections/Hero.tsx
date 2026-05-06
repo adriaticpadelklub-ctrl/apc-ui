@@ -15,7 +15,7 @@ interface HeroProps {
 }
 
 export function Hero({
-  title = 'Uvijek se igra',
+  title = 'Otvaramo ubrzo',
   subtitle = 'Premium padel iskustvo u Planu blizu Trogira',
   showScrollIndicator = true,
 }: HeroProps) {
