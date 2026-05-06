@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://adriaticpadelclub.hr'),
+  metadataBase: new URL('https://www.adriaticpadelklub.hr'),
   title: {
     default: 'Adriatic Padel Club | Premium Padel u Trogiru',
     template: '%s | Adriatic Padel Club',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'hr_HR',
-    url: 'https://adriaticpadelclub.hr',
+    url: 'https://www.adriaticpadelklub.hr',
     siteName: 'Adriatic Padel Club',
     title: 'Adriatic Padel Club | Premium Padel u Trogiru',
     description:
