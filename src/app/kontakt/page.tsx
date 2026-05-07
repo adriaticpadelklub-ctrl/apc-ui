@@ -282,7 +282,7 @@ export default function ContactPage() {
               {/* Map */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23117.85!2d16.2511!3d43.5165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355e6b26b0d9f3%3A0x3c5d0e3e3e3e3e3e!2sTrogir%2C%20Croatia!5e0!3m2!1sen!2sus!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.901566912978!2d16.282934076457227!3d43.539342659787025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133543b5ce0e4ddb%3A0x67d4aaaabda9d4a2!2sAdriatic%20Padel%20Klub!5e1!3m2!1sen!2shr!4v1778143577190!5m2!1sen!2shr"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
