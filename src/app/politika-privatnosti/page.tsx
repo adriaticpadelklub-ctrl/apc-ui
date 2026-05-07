@@ -53,7 +53,7 @@ export default function PrivacyPolicyPage() {
               <p className="text-teal/80 mb-2">OIB: 70690014090</p>
               <p className="text-teal/80 mb-2">MB: 06257020</p>
               <p className="text-teal/80 mb-2">E-mail: <a href="mailto:info@adriaticpadelklub.hr" className="text-lime hover:underline">info@adriaticpadelklub.hr</a></p>
-              <p className="text-teal/80">Telefon: <a href="tel:+38598222063" className="text-lime hover:underline">+385 98 222 063</a></p>
+              <p className="text-teal/80">Telefon: <a href="tel:+385912828803" className="text-lime hover:underline">+385 91 2828 803</a></p>
             </div>
 
             <h2 className="font-heading text-2xl font-bold text-teal mt-12 mb-4">
@@ -217,7 +217,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="bg-beige rounded-xl p-6 mb-6">
               <p className="text-teal/80 mb-2">E-mail: <a href="mailto:info@adriaticpadelklub.hr" className="text-lime hover:underline">info@adriaticpadelklub.hr</a></p>
-              <p className="text-teal/80 mb-2">Telefon: <a href="tel:+38598222063" className="text-lime hover:underline">+385 98 222 063</a></p>
+              <p className="text-teal/80 mb-2">Telefon: <a href="tel:+385912828803" className="text-lime hover:underline">+385 91 2828 803</a></p>
               <p className="text-teal/80">Adresa: Pazdigradska 44A, 21000 Split, Hrvatska</p>
             </div>
 

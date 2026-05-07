@@ -289,8 +289,8 @@ export default function CookiePolicyPage() {
               </p>
               <p className="text-teal/80 mb-2">
                 Telefon:{' '}
-                <a href="tel:+38598222063" className="text-lime hover:underline">
-                  +385 98 222 063
+                <a href="tel:+385912828803" className="text-lime hover:underline">
+                  +385 91 2828 803
                 </a>
               </p>
               <p className="text-teal/80">

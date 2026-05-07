@@ -24,7 +24,7 @@ export function LocalBusinessSchema({
   name = 'Adriatic Padel Club',
   description = 'Premium padel klub u Planu blizu Trogira. Vrhunski indoor tereni, profesionalni treneri i padel akademija.',
   image = 'https://adriaticpadelclub.hr/og-image.jpg',
-  telephone = '+38598222063',
+  telephone = '+385912828803',
   email = 'info@adriaticpadelklub.hr',
   address = {
     streetAddress: 'Put Stombrata 18',

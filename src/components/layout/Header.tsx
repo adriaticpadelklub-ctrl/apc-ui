@@ -218,8 +218,8 @@ export function Header() {
               </Button>
 
               <div className="mobile-nav-item mt-6 flex items-center gap-6 text-teal/60 text-sm">
-                <a href="tel:+38598222063" className="hover:text-teal transition-colors">
-                  +38598222063
+                <a href="tel:+385912828803" className="hover:text-teal transition-colors">
+                  +385 91 2828 803
                 </a>
                 <a href="mailto:info@adriaticpadelklub.hr" className="hover:text-teal transition-colors">
                   info@adriaticpadelklub.hr
