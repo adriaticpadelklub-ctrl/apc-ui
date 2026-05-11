@@ -186,7 +186,7 @@ export default function AboutPage() {
             svoj prvi termin ili nas posjetite kako biste upoznali klub uživo.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="https://playtomic.io" external variant="lime" size="lg">
+            <Button href="https://playtomic.io/tenant/8a79dede-5d90-4063-b037-84d3ca17c09d?utm_source=app_ios&utm_campaign=share" external variant="lime" size="lg">
               Rezerviraj Teren
             </Button>
             <Button

@@ -311,7 +311,7 @@ export default function ContactPage() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <a
-              href="https://playtomic.io"
+              href="https://playtomic.io/tenant/8a79dede-5d90-4063-b037-84d3ca17c09d?utm_source=app_ios&utm_campaign=share"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-lime hover:text-teal transition-all duration-300 group"

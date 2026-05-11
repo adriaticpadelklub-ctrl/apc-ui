@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/Button';
 import { gsap } from '@/lib/gsap';
 
-const BOOKING_URL = 'https://playtomic.io';
+const BOOKING_URL = 'https://playtomic.io/tenant/8a79dede-5d90-4063-b037-84d3ca17c09d?utm_source=app_ios&utm_campaign=share';
 
 const courts = [
   { id: 1, name: 'Teren 1', type: 'Premium Indoor', features: ['Full panoramic'] },

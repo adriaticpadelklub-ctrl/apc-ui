@@ -404,7 +404,7 @@ export default function AcademyPage() {
             <Button href="/kontakt" variant="primary" size="lg">
               Prijavi se
             </Button>
-            <Button href="https://playtomic.io" external variant="outline" size="lg">
+            <Button href="https://playtomic.io/tenant/8a79dede-5d90-4063-b037-84d3ca17c09d?utm_source=app_ios&utm_campaign=share" external variant="outline" size="lg">
               Probni trening
             </Button>
           </div>
