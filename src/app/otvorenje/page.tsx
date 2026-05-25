@@ -111,7 +111,7 @@ export default function OtvorenjePage() {
             </CardHeader>
             <CardContent>
               <p className="text-teal/70">5. lipnja 2026.</p>
-              <p className="text-sm text-teal/50">Četvrtak</p>
+              <p className="text-sm text-teal/50">Petak</p>
             </CardContent>
           </Card>
 
