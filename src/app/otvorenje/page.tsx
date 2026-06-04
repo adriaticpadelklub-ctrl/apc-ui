@@ -1,16 +1,54 @@
 'use client';
 
-import { useState } from 'react';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section, SectionHeading } from '@/components/ui/SectionHeading';
-import { Button } from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 
+const SIGNUPS_CLOSED = true;
+
 const scheduleItems = [
-  { time: '16:00', title: 'Početak događanja', description: 'Dobrodošlica i uvodne riječi' },
-  { time: '16:30', title: 'Mini Turnir', description: 'Natjecanje parova - prijava individualna' },
-  { time: '18:00', title: 'Winner Stays On', description: 'Pobjednik ostaje na terenu' },
-  { time: '19:00', title: 'Dodatni izazovi', description: 'Više informacija uskoro...' },
+  {
+    time: '16:00 - 17:00',
+    title: 'Preuzimanje majica i poklon paketa',
+    description: 'Molimo sve da potvrde svoj dolazak putem Google Sheeta.',
+    icon: 'tshirt'
+  },
+  {
+    time: '17:00',
+    title: 'Počinje Mini Turnir!',
+    description: null,
+    bullets: [
+      'Odvojene kategorije: muškarci i žene',
+      'Prvo kolo: Super Tiebreak do 10',
+      'Brzi mečevi, brze promjene',
+      'Interaktivni DJ tijekom cijelog turnira'
+    ],
+    icon: 'racket'
+  },
+  {
+    time: '18:30',
+    title: 'Pauza za catering',
+    description: 'Kratka pauza, druženje i punjenje baterija.',
+    icon: 'food'
+  },
+  {
+    time: '',
+    title: 'Nastavak turnira + izazovi',
+    description: 'Nastavljamo s turnirom i izazovima s raznim nagradama.',
+    icon: 'challenge'
+  },
+  {
+    time: '',
+    title: 'Winner Stays On',
+    description: 'Nastupaju i oni koji su ispali iz mini turnira. Pobjednik osvaja nagradu! Odvojeno za muškarce i žene.',
+    icon: 'trophy'
+  },
+  {
+    time: '',
+    title: 'Kraj programa & Party',
+    description: 'Po završetku programa slobodni tereni su dostupni za igru. DJ preuzima kontrolu, muzika se pojačava i party starta.',
+    icon: 'party'
+  },
 ];
 
 const contactInfo = {
@@ -26,62 +64,6 @@ const socialLinks = [
 ];
 
 export default function OtvorenjePage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    experienceLevel: '',
-    age: '',
-    padelExperience: '',
-    shirtSize: '',
-    dietaryRestrictions: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const [submitError, setSubmitError] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError(false);
-
-    try {
-      const response = await fetch('/api/otvorenje-signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit');
-      }
-
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        experienceLevel: '',
-        age: '',
-        padelExperience: '',
-        shirtSize: '',
-        dietaryRestrictions: '',
-      });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    } catch {
-      setSubmitError(true);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <>
       <PageHero
@@ -151,8 +133,8 @@ export default function OtvorenjePage() {
       {/* Schedule Section */}
       <Section theme="dark" padding="lg">
         <SectionHeading
-          tagline="Program"
-          title="Raspored događanja"
+          tagline="Plan Turnira"
+          title="Sve na jednom mjestu"
           subtitle="Pripremili smo uzbudljiv program za sve ljubitelje padela."
           theme="dark"
         />
@@ -165,18 +147,62 @@ export default function OtvorenjePage() {
             <div className="space-y-6">
               {scheduleItems.map((item, index) => (
                 <div key={index} className="flex gap-6 items-start">
-                  {/* Time bubble */}
+                  {/* Icon bubble */}
                   <div className="hidden md:flex flex-shrink-0 w-14 h-14 rounded-full bg-lime text-teal font-heading font-bold text-sm items-center justify-center z-10">
-                    {item.time}
+                    {item.icon === 'tshirt' && (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    )}
+                    {item.icon === 'racket' && (
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="5" fill="none" stroke="currentColor" strokeWidth="2"/>
+                        <line x1="12" y1="13" x2="12" y2="21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    )}
+                    {item.icon === 'food' && (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                    )}
+                    {item.icon === 'challenge' && (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    )}
+                    {item.icon === 'trophy' && (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                      </svg>
+                    )}
+                    {item.icon === 'party' && (
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                      </svg>
+                    )}
                   </div>
 
                   <Card variant="dark" className="flex-1 bg-white/5 border border-white/10">
                     <CardHeader className="mb-2">
-                      <span className="text-lime text-sm font-semibold md:hidden">{item.time}</span>
+                      {item.time && (
+                        <span className="text-lime text-lg font-bold block mb-1">{item.time}</span>
+                      )}
                       <CardTitle className="text-white">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-white/70">{item.description}</p>
+                      {item.description && (
+                        <p className="text-white/70">{item.description}</p>
+                      )}
+                      {item.bullets && (
+                        <ul className="text-white/70 space-y-1">
+                          {item.bullets.map((bullet, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-lime mt-1">•</span>
+                              <span>{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </CardContent>
                   </Card>
                 </div>
@@ -219,166 +245,31 @@ export default function OtvorenjePage() {
               Prijava za Mini Turnir
             </h3>
 
-            {isSubmitted && (
-              <div className="mb-6 p-4 bg-lime/20 border border-lime rounded-xl text-teal">
-                <p className="font-semibold">Hvala na prijavi!</p>
-                <p className="text-sm">Vidimo se 5. lipnja!</p>
+            {SIGNUPS_CLOSED ? (
+              <div className="bg-teal/5 border-2 border-teal/20 rounded-2xl p-8 text-center">
+                <div className="w-16 h-16 rounded-full bg-lime/20 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h4 className="font-heading text-xl font-bold text-teal mb-2">
+                  Prijave su zatvorene
+                </h4>
+                <p className="text-teal/70 mb-4">
+                  Hvala svima na velikom interesu! Prijave za Mini Turnir su zatvorene.
+                </p>
+                <p className="text-teal/70 mb-6">
+                  Svi prijavljeni sudionici dobili su email s detaljima. Vidimo se 5. lipnja!
+                </p>
+                <div className="bg-lime/20 border border-lime rounded-xl p-4">
+                  <p className="font-semibold text-teal text-sm">
+                    Prijavljeno sudionika: 142
+                  </p>
+                </div>
               </div>
+            ) : (
+              <p className="text-teal/70">Prijave trenutno nisu dostupne.</p>
             )}
-
-            {submitError && (
-              <div className="mb-6 p-4 bg-red-100 border border-red-400 rounded-xl text-red-700">
-                <p className="font-semibold">Greška pri slanju</p>
-                <p className="text-sm">Molimo pokušajte ponovno ili nas kontaktirajte direktno.</p>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-teal mb-2">
-                    Ime i prezime *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-teal/20 rounded-xl text-teal placeholder:text-teal/40 focus:outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
-                    placeholder="Vaše ime"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-teal mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-teal/20 rounded-xl text-teal placeholder:text-teal/40 focus:outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
-                    placeholder="vas@email.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-teal mb-2">
-                    Broj telefona *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-teal/20 rounded-xl text-teal placeholder:text-teal/40 focus:outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
-                    placeholder="+385 99 123 4567"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="experienceLevel" className="block text-sm font-medium text-teal mb-2">
-                    Razina iskustva *
-                  </label>
-                  <select
-                    id="experienceLevel"
-                    name="experienceLevel"
-                    required
-                    value={formData.experienceLevel}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-teal/20 rounded-xl text-teal focus:outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
-                  >
-                    <option value="">Odaberite razinu</option>
-                    <option value="beginner">Početnik</option>
-                    <option value="intermediate">Srednji</option>
-                    <option value="advanced">Napredni</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="age" className="block text-sm font-medium text-teal mb-2">
-                    Dob
-                  </label>
-                  <input
-                    type="number"
-                    id="age"
-                    name="age"
-                    min={16}
-                    value={formData.age}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-teal/20 rounded-xl text-teal placeholder:text-teal/40 focus:outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
-                    placeholder="Vaša dob"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="padelExperience" className="block text-sm font-medium text-teal mb-2">
-                    Padel iskustvo
-                  </label>
-                  <select
-                    id="padelExperience"
-                    name="padelExperience"
-                    value={formData.padelExperience}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-teal/20 rounded-xl text-teal focus:outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
-                  >
-                    <option value="">Odaberite</option>
-                    <option value="less-6-months">&lt;6 mjeseci</option>
-                    <option value="6-12-months">6-12 mjeseci</option>
-                    <option value="1-2-years">1-2 godine</option>
-                    <option value="2-plus-years">2+ godine</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="shirtSize" className="block text-sm font-medium text-teal mb-2">
-                  Veličina majice *
-                </label>
-                <select
-                  id="shirtSize"
-                  name="shirtSize"
-                  required
-                  value={formData.shirtSize}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-teal/20 rounded-xl text-teal focus:outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all"
-                >
-                  <option value="">Odaberite veličinu</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="dietaryRestrictions" className="block text-sm font-medium text-teal mb-2">
-                  Prehrambena ograničenja
-                </label>
-                <textarea
-                  id="dietaryRestrictions"
-                  name="dietaryRestrictions"
-                  rows={3}
-                  value={formData.dietaryRestrictions}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-teal/20 rounded-xl text-teal placeholder:text-teal/40 focus:outline-none focus:border-lime focus:ring-2 focus:ring-lime/20 transition-all resize-none"
-                  placeholder="Alergije, vegetarijanska prehrana, itd."
-                />
-              </div>
-
-              <Button type="submit" variant="primary" size="lg" disabled={isSubmitting}>
-                {isSubmitting ? 'Šaljem prijavu...' : 'Prijavi se'}
-              </Button>
-            </form>
           </div>
         </div>
       </Section>

@@ -15,8 +15,8 @@ interface HeroProps {
 }
 
 export function Hero({
-  title = 'Otvaramo ubrzo',
-  subtitle = 'Premium padel iskustvo u Planu blizu Trogira',
+  title = 'Premium padel iskustvo u Planu blizu Trogira',
+  subtitle = 'Dva profesionalna terena, akademija za sve razine i nezaboravna atmosfera.',
   showScrollIndicator = true,
 }: HeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
