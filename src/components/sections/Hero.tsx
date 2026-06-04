@@ -15,8 +15,8 @@ interface HeroProps {
 }
 
 export function Hero({
-  title = 'Premium padel iskustvo u Planu blizu Trogira',
-  subtitle = 'Dva profesionalna terena, akademija za sve razine i nezaboravna atmosfera.',
+  title = 'Padel na\nAdriatic način',
+  subtitle = '6 profesionalnih terena za svaku razinu i nezaboravna atmosfera.',
   showScrollIndicator = true,
 }: HeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -160,11 +160,15 @@ export function Hero({
     return () => ctx.revert();
   }, []);
 
-  // Split title into words for animation
-  const titleWords = title.split(' ').map((word, index) => (
-    <span key={index} className="word inline-block overflow-hidden">
-      <span className="inline-block">{word}</span>
-      {index < title.split(' ').length - 1 && '\u00A0'}
+  // Split title into lines, then words for animation
+  const titleLines = title.split('\n').map((line, lineIndex) => (
+    <span key={lineIndex} className="block">
+      {line.split(' ').map((word, wordIndex) => (
+        <span key={wordIndex} className="word inline-block overflow-hidden">
+          <span className="inline-block">{word}</span>
+          {wordIndex < line.split(' ').length - 1 && '\u00A0'}
+        </span>
+      ))}
     </span>
   ));
 
@@ -202,7 +206,7 @@ export function Hero({
             ref={titleRef}
             className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-none mb-6"
           >
-            {titleWords}
+            {titleLines}
           </h1>
 
           {/* Subtitle */}

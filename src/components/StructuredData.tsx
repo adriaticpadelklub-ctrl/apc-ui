@@ -70,9 +70,8 @@ export function LocalBusinessSchema({
     }),
     priceRange,
     sameAs: [
-      'https://facebook.com/adriaticpadelclub',
-      'https://instagram.com/adriaticpadelclub',
-      'https://youtube.com/@adriaticpadelclub',
+      'https://www.instagram.com/adriaticpadel/',
+      'https://www.tiktok.com/@adriaticpadelklub',
     ],
     amenityFeature: [
       { '@type': 'LocationFeatureSpecification', name: 'Padel Courts', value: true },
