@@ -13,6 +13,7 @@ const navigation = [
   { name: 'Početna', href: '/' },
   { name: 'O nama', href: '/o-nama' },
   { name: 'Tereni', href: '/tereni' },
+  { name: 'Turniri', href: '/turniri' },
   { name: 'Kontakt', href: '/kontakt' },
 ];
 

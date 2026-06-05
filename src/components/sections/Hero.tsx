@@ -180,15 +180,15 @@ export function Hero({
       {/* Background Image with Overlay */}
       <div ref={imageRef} className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero-court.jpg"
+          src="/images/new-hero.jpg"
           alt="Adriatic Padel Club indoor court"
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-teal/80 via-teal/60 to-teal/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal/40 via-teal/20 to-teal/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
       </div>
 
       {/* Content */}
