@@ -24,7 +24,12 @@ export async function GET() {
 
     if (error) {
       console.error('Supabase error:', error);
-      return NextResponse.json({ error: 'Failed to fetch tournaments', details: error.message }, { status: 500 });
+      return NextResponse.json({
+        error: 'Failed to fetch tournaments',
+        code: error.code,
+        message: error.message,
+        hint: error.hint
+      }, { status: 500 });
     }
 
     return NextResponse.json(tournaments || []);
