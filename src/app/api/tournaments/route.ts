@@ -11,6 +11,12 @@ function calculateBracketSize(teamCount: number): BracketSize {
 
 export async function GET() {
   try {
+    // Check if Supabase is configured
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL.includes('placeholder')) {
+      console.error('Supabase not configured');
+      return NextResponse.json({ error: 'Database not configured' }, { status: 503 });
+    }
+
     const { data: tournaments, error } = await supabase
       .from('tournaments')
       .select('*')
@@ -18,12 +24,13 @@ export async function GET() {
 
     if (error) {
       console.error('Supabase error:', error);
-      return NextResponse.json({ error: 'Failed to fetch tournaments' }, { status: 500 });
+      return NextResponse.json({ error: 'Failed to fetch tournaments', details: error.message }, { status: 500 });
     }
 
-    return NextResponse.json(tournaments);
-  } catch {
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json(tournaments || []);
+  } catch (err) {
+    console.error('API error:', err);
+    return NextResponse.json({ error: 'Internal server error', details: String(err) }, { status: 500 });
   }
 }
 

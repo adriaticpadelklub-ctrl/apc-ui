@@ -17,18 +17,23 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 async function getTournaments(): Promise<Tournament[]> {
-  const { data, error } = await supabase
-    .from('tournaments')
-    .select('*')
-    .in('status', ['active', 'completed'])
-    .order('created_at', { ascending: false });
+  try {
+    const { data, error } = await supabase
+      .from('tournaments')
+      .select('*')
+      .in('status', ['active', 'completed'])
+      .order('created_at', { ascending: false });
 
-  if (error) {
-    console.error('Error fetching tournaments:', error);
+    if (error) {
+      console.error('Error fetching tournaments:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error('Failed to fetch tournaments:', err);
     return [];
   }
-
-  return data || [];
 }
 
 export default async function TournamentsPage() {
