@@ -28,7 +28,7 @@ const faqItems: FAQItem[] = [
   {
     question: 'Mogu li doći igrati bez opreme?',
     answer:
-      'Da! U klubu možete besplatno posuditi rekete i loptice. Preporučujemo da ponesete sportsku obuću s neranjivim potplatom i udobnu sportsku odjeću. Imamo i svlačionice s tuševima.',
+      'Da! U klubu možete posuditi rekete i loptice. Basic reket je 3€ a premium je 5€. Preporučujemo da ponesete sportsku obuću s neranjivim potplatom i udobnu sportsku odjeću. Imamo i svlačionice s tuševima.',
   },
   {
     question: 'Organizirate li turnire za amatere?',
