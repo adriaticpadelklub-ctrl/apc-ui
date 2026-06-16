@@ -2,50 +2,32 @@
 
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { gsap } from '@/lib/gsap';
-import { cn } from '@/lib/utils';
+
+const BOOKING_URL = 'https://playtomic.io/tenant/8a79dede-5d90-4063-b037-84d3ca17c09d?utm_source=app_ios&utm_campaign=share';
 
 interface Coach {
   id: number;
   name: string;
-  role: string;
-  specialization: string;
   image: string;
-  experience: string;
 }
 
 const coaches: Coach[] = [
   {
     id: 1,
-    name: 'Marko Horvat',
-    role: 'Glavni trener',
-    specialization: 'Napredna tehnika',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-    experience: '15+ godina iskustva',
+    name: 'Matija Selak',
+    image: '/images/trainers/matija-selak.jpg',
   },
   {
     id: 2,
-    name: 'Ana Kovačević',
-    role: 'Trener akademije',
-    specialization: 'Početnici i djeca',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
-    experience: '10+ godina iskustva',
+    name: 'Grgo Dujmović',
+    image: '/images/trainers/grgo-dujmović.jpg',
   },
   {
     id: 3,
-    name: 'Ivan Perić',
-    role: 'Fitness trener',
-    specialization: 'Kondicija i snaga',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-    experience: '8+ godina iskustva',
-  },
-  {
-    id: 4,
-    name: 'Petra Babić',
-    role: 'Trener natjecatelja',
-    specialization: 'Taktika i strategija',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
-    experience: '12+ godina iskustva',
+    name: 'Jerko Brkić',
+    image: '/images/trainers/jerko-brkić.JPG',
   },
 ];
 
@@ -88,13 +70,13 @@ function CoachCard({ coach, index }: CoachCardProps) {
       className="group relative"
     >
       {/* Image Container */}
-      <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6">
+      <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
         <Image
           src={coach.image}
           alt={coach.name}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
 
         {/* Overlay */}
@@ -103,31 +85,19 @@ function CoachCard({ coach, index }: CoachCardProps) {
         {/* Lime Accent on Hover */}
         <div className="absolute inset-0 bg-lime/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-        {/* Experience Badge */}
-        <div className="absolute top-4 right-4 bg-lime px-3 py-1 rounded-full">
-          <span className="text-xs font-semibold text-teal">{coach.experience}</span>
+        {/* Coach Name at Bottom */}
+        <div className="absolute bottom-6 left-6 right-6">
+          <h3 className="font-heading text-2xl font-bold text-white group-hover:text-lime transition-colors duration-300">
+            {coach.name}
+          </h3>
         </div>
-
-        {/* Specialization - Shows on hover */}
-        <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-          <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-            <p className="text-sm font-medium text-teal">{coach.specialization}</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Info */}
-      <div className="text-center">
-        <h3 className="font-heading text-xl font-bold text-white mb-1 group-hover:text-lime transition-colors duration-300">
-          {coach.name}
-        </h3>
-        <p className="text-white/60">{coach.role}</p>
       </div>
     </div>
   );
 }
 
 export function Coaches() {
+  const t = useTranslations('coaches');
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -163,19 +133,18 @@ export function Coaches() {
         {/* Header */}
         <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-16">
           <span className="animate-header inline-block text-sm font-semibold uppercase tracking-widest text-lime mb-4">
-            Naš tim
+            {t('label')}
           </span>
           <h2 className="animate-header font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Upoznajte naše trenere
+            {t('title')}
           </h2>
           <p className="animate-header text-lg text-white/70 leading-relaxed">
-            Naš tim certificiranih trenera posvećen je vašem napretku. S dugogodišnjim
-            iskustvom i strašću za padel, pomoći će vam dostići vaše ciljeve.
+            {t('subtitle')}
           </p>
         </div>
 
         {/* Coaches Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {coaches.map((coach, index) => (
             <CoachCard key={coach.id} coach={coach} index={index} />
           ))}
@@ -184,12 +153,14 @@ export function Coaches() {
         {/* Bottom Text */}
         <div className="mt-16 text-center">
           <p className="text-white/60 text-lg">
-            Zainteresirani za individualne treninge?{' '}
+            {t('cta')}{' '}
             <a
-              href="/kontakt"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-lime hover:underline font-medium"
             >
-              Kontaktirajte nas
+              {t('ctaLink')}
             </a>
           </p>
         </div>

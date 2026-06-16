@@ -1,29 +1,32 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { Link, usePathname } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { gsap } from '@/lib/gsap';
 import { useScrollTo } from '@/hooks/useLenis';
-
-const navigation = [
-  { name: 'Početna', href: '/' },
-  { name: 'O nama', href: '/o-nama' },
-  { name: 'Tereni', href: '/tereni' },
-  { name: 'Turniri', href: '/turniri' },
-  { name: 'Kontakt', href: '/kontakt' },
-];
 
 const BOOKING_URL = 'https://playtomic.io/tenant/8a79dede-5d90-4063-b037-84d3ca17c09d?utm_source=app_ios&utm_campaign=share';
 
 export function Header() {
+  const t = useTranslations('navigation');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const scrollTo = useScrollTo();
+
+  const navigation = [
+    { name: t('home'), href: '/' as const },
+    { name: t('about'), href: '/o-nama' as const },
+    { name: t('courts'), href: '/tereni' as const },
+    { name: t('academy'), href: '/akademija' as const },
+    { name: t('tournaments'), href: '/turniri' as const },
+    { name: t('contact'), href: '/kontakt' as const },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -127,15 +130,19 @@ export function Header() {
               ))}
             </div>
 
-            {/* Desktop CTA */}
+            {/* Desktop CTA & Language Switcher */}
             <div className="hidden lg:flex items-center gap-4">
+              <LanguageSwitcher
+                variant="header"
+                className={isScrolled ? 'text-teal' : 'text-white'}
+              />
               <Button
                 href={BOOKING_URL}
                 external
                 variant="primary"
                 size="sm"
               >
-                Rezerviraj Teren
+                {t('bookCourt')}
               </Button>
             </div>
 
@@ -144,7 +151,7 @@ export function Header() {
               type="button"
               className="lg:hidden relative z-10 p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? 'Zatvori izbornik' : 'Otvori izbornik'}
+              aria-label={isMobileMenuOpen ? t('closeMenu') : t('openMenu')}
               aria-expanded={isMobileMenuOpen}
             >
               <div className="w-6 h-5 relative flex flex-col justify-between">
@@ -206,6 +213,10 @@ export function Header() {
               ))}
             </nav>
 
+            <div className="mobile-nav-item mt-6">
+              <LanguageSwitcher />
+            </div>
+
             <div className="mt-auto pt-8 border-t border-teal/10">
               <Button
                 href={BOOKING_URL}
@@ -215,7 +226,7 @@ export function Header() {
                 fullWidth
                 className="mobile-nav-item"
               >
-                Rezerviraj Teren
+                {t('bookCourt')}
               </Button>
 
               <div className="mobile-nav-item mt-6 flex items-center gap-6 text-teal/60 text-sm">

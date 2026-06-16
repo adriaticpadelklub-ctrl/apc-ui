@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { gsap } from '@/lib/gsap';
 import { cn } from '@/lib/utils';
 
@@ -9,38 +9,49 @@ interface Testimonial {
   id: number;
   quote: string;
   author: string;
-  role: string;
-  image: string;
+  source: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
     quote:
-      'Adriatic Padel Club je promijenio moj pogled na sport. Tereni su vrhunski, a atmosfera je nevjerojatna. Osjećam se kao dio obitelji od prvog dana.',
-    author: 'Marina Šimić',
-    role: 'Članica od 2022.',
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&q=80',
+      'Odličan prostor za padel – prostran, uredan i odlično organiziran. Uz vrhunskog trenera Matiju, svaki trening je pravo zadovoljstvo. Sve je na svom mjestu, od garderoba do reketa. Bravo ekipi!',
+    author: 'Maja Barisic',
+    source: 'Google Reviews',
   },
   {
     id: 2,
     quote:
-      'Kao početnik, bio sam skeptičan, ali treneri su nevjerojatni. Za samo nekoliko mjeseci napredovao sam više nego što sam očekivao.',
-    author: 'Tomislav Matić',
-    role: 'Član od 2023.',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80',
+      'Super klub sa odličnim terenima, na samo 20 minuta udaljenosti od Splita. Sve pohvale!',
+    author: 'Ante Andabak',
+    source: 'Google Reviews',
   },
   {
     id: 3,
     quote:
-      'Najbolji padel klub u regiji! Organizacija turnira je profesionalna, a druženje nakon utakmica je nezamjenjivo.',
-    author: 'Ivana Petrović',
-    role: 'Natjecateljica',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80',
+      'Najbolji padel klub! Tereni su super, atmosfera opuštena i društvo za svaku pohvalu. Sve pohvale za trenera Matiju - strpljiv i sve lijepo objasni. Preporučujem i početnicima i naprednima.',
+    author: 'Andrea P',
+    source: 'Google Reviews',
+  },
+  {
+    id: 4,
+    quote:
+      'Odličan klub, ambijent i novo mjesto za padel! Napokon imamo mjesto za odigrat padel na najboljim terenima. Sve pohvale svima!',
+    author: 'Luka Vuković',
+    source: 'Google Reviews',
+  },
+  {
+    id: 5,
+    quote:
+      'Great hall, fantastic panoramic courts, and the people there are super friendly. I would love to come back here on my next holiday.',
+    author: 'Jean Ka',
+    source: 'Google Reviews',
   },
 ];
 
 export function Testimonials() {
+  const t = useTranslations('testimonials');
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -112,10 +123,10 @@ export function Testimonials() {
         {/* Header */}
         <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-16">
           <span className="animate-header inline-block text-sm font-semibold uppercase tracking-widest text-teal/60 mb-4">
-            Iskustva članova
+            {t('label')}
           </span>
           <h2 className="animate-header font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-teal leading-tight">
-            Što kažu naši članovi
+            {t('title')}
           </h2>
         </div>
 
@@ -144,24 +155,20 @@ export function Testimonials() {
               {/* Author */}
               <div
                 className={cn(
-                  'flex items-center gap-4 transition-opacity duration-500',
+                  'flex items-center gap-3 transition-opacity duration-500',
                   isAnimating ? 'opacity-0' : 'opacity-100'
                 )}
               >
-                <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-lime">
-                  <Image
-                    src={activeTestimonial.image}
-                    alt={activeTestimonial.author}
-                    fill
-                    className="object-cover"
-                    sizes="56px"
-                  />
+                <div className="w-10 h-10 rounded-full bg-lime flex items-center justify-center">
+                  <span className="font-heading font-bold text-teal text-lg">
+                    {activeTestimonial.author.charAt(0)}
+                  </span>
                 </div>
                 <div>
                   <p className="font-heading font-bold text-teal">
                     {activeTestimonial.author}
                   </p>
-                  <p className="text-teal/60 text-sm">{activeTestimonial.role}</p>
+                  <p className="text-teal/60 text-sm">{activeTestimonial.source}</p>
                 </div>
               </div>
             </div>

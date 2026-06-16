@@ -9,3 +9,4 @@ export { FAQ } from './FAQ';
 export { PageHero } from './PageHero';
 export { TeamSection } from './TeamSection';
 export { GallerySection } from './GallerySection';
+export { EquipmentRental } from './EquipmentRental';

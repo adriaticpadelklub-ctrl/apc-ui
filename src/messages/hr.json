@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "title": "Adriatic Padel Club | Premium Padel u Trogiru",
+    "titleTemplate": "%s | Adriatic Padel Club",
+    "description": "Premium padel iskustvo na obali Jadrana. Adriatic Padel Club u Planu blizu Trogira nudi vrhunske indoor terene, profesionalne trenere i padel akademiju za sve razine igrača.",
+    "ogDescription": "Premium padel iskustvo na obali Jadrana. Vrhunski indoor tereni, profesionalni treneri i padel akademija.",
+    "ogTitle": "Adriatic Padel Club | Premium Padel u Trogiru",
+    "twitterTitle": "Adriatic Padel Club | Premium Padel u Trogiru",
+    "twitterDescription": "Premium padel iskustvo na obali Jadrana."
+  },
+  "navigation": {
+    "home": "Početna",
+    "about": "O nama",
+    "courts": "Tereni",
+    "academy": "Akademija",
+    "tournaments": "Turniri",
+    "contact": "Kontakt",
+    "bookCourt": "Rezerviraj Teren",
+    "openMenu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik"
+  },
+  "hero": {
+    "tagline": "Adriatic Padel Club",
+    "title": "Padel na\nAdriatic način",
+    "subtitle": "6 profesionalnih terena za svaku razinu i nezaboravna atmosfera.",
+    "bookCourt": "Rezerviraj Teren",
+    "learnMore": "Saznaj Više",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "O nama",
+    "title": "Dobrodošli u Adriatic Padel Club",
+    "description1": "Smješteni u Planu blizu Trogira, Adriatic Padel Club je premier destinacija za padel entuzijaste svih razina. Naš klub kombinira vrhunske terene, profesionalne trenere i prijateljsku atmosferu kako bi vam pružili nezaboravno padel iskustvo.",
+    "description2": "Bilo da ste početnik koji želi naučiti osnove ili iskusni igrač koji traži izazov, naš tim je tu da vam pomogne ostvariti vaše ciljeve.",
+    "moreAboutUs": "Više o nama",
+    "premiumQuality": "Premium Kvaliteta",
+    "bestCourtsAdriatic": "Najbolji tereni na Jadranu",
+    "stats": {
+      "yearsExperience": "Godina iskustva",
+      "professionalCoaches": "Profesionalnih trenera",
+      "tournamentsYearly": "Turnira godišnje"
+    }
+  },
+  "services": {
+    "label": "Usluge",
+    "title": "Sve što trebate za savršenu igru",
+    "subtitle": "Od rezervacije terena do profesionalnih treninga - imamo sve što vam treba za razvoj vaše padel igre.",
+    "learnMore": "Saznaj više",
+    "items": {
+      "booking": {
+        "title": "Rezervacija Terena",
+        "description": "Rezervirajte teren online u samo nekoliko klikova. Dostupni termini 14 dana unaprijed."
+      },
+      "academy": {
+        "title": "Padel Akademija",
+        "description": "Profesionalni programi za sve razine - od početnika do naprednih igrača."
+      },
+      "academy": {
+        "title": "Padel Akademija",
+        "description": "Profesionalni programi treninga za sve razine - od početnika do naprednih igrača."
+      },
+      "tournaments": {
+        "title": "Turniri i Lige",
+        "description": "Natjecajte se s igračima vaše razine u redovnim turnirima i amaterskim ligama."
+      }
+    }
+  },
+  "courts": {
+    "label": "Naši tereni",
+    "title": "6 premium indoor terena",
+    "subtitle": "Raspolažemo s 6 premium indoor terena opremljenih najmodernijom tehnologijom za vrhunsko padel iskustvo tijekom cijele godine.",
+    "bookCourt": "Rezerviraj teren",
+    "availableNote": "Svi tereni dostupni za rezervaciju 14 dana unaprijed",
+    "features": {
+      "led": {
+        "title": "LED Rasvjeta",
+        "description": "Profesionalna rasvjeta za igru u bilo koje doba dana"
+      },
+      "indoor": {
+        "title": "Indoor Tereni",
+        "description": "Svih 6 terena pod krovom za igru bez obzira na vrijeme"
+      },
+      "equipment": {
+        "title": "Profesionalna Oprema",
+        "description": "Tereni opremljeni po najvišim standardima"
+      }
+    },
+    "courtTypes": {
+      "premiumIndoor": "Premium Indoor",
+      "premium1v1": "Premium 1v1 Teren"
+    }
+  },
+  "faq": {
+    "label": "Česta pitanja",
+    "title": "Imate pitanja? Mi imamo odgovore.",
+    "subtitle": "Pronađite odgovore na najčešća pitanja o padelu i našem klubu. Ako ne pronađete odgovor, slobodno nas kontaktirajte.",
+    "contactUs": "Kontaktirajte nas",
+    "items": {
+      "whatIsPadel": {
+        "question": "Što je padel i kako se igra?",
+        "answer": "Padel je brzorastući reket sport koji kombinira elemente tenisa i squasha. Igra se na zatvorenom terenu s zidovima od stakla, u parovima (2 protiv 2). Loptica može odskočiti od zidova, što čini igru dinamičnom i zabavnom za sve razine igrača."
+      },
+      "needExperience": {
+        "question": "Trebam li prethodno iskustvo za igranje?",
+        "answer": "Ne! Padel je poznat kao sport koji je lako naučiti. Naši treneri su specijalizirani za rad s početnicima i pomoći će vam savladati osnove u kratkom vremenu. Nudimo i besplatne uvodne sate za nove članove."
+      },
+      "howToBook": {
+        "question": "Kako mogu rezervirati teren?",
+        "answer": "Terene možete rezervirati putem naše online platforme Playtomic, telefonom ili osobno u klubu. Rezervacije su moguće do 14 dana unaprijed, a članovi imaju prioritet pri rezervaciji najpopularnijih termina."
+      },
+      "noEquipment": {
+        "question": "Mogu li doći igrati bez opreme?",
+        "answer": "Da! U klubu možete posuditi rekete i loptice. Basic reket je 3€ a premium je 5€. Preporučujemo da ponesete sportsku obuću s neranjivim potplatom i udobnu sportsku odjeću. Imamo i svlačionice s tuševima."
+      },
+      "amateurTournaments": {
+        "question": "Organizirate li turnire za amatere?",
+        "answer": "Apsolutno! Redovito organiziramo turnire za sve razine igrača, od potpunih početnika do naprednih. Turniri su izvrsna prilika za upoznavanje novih igrača i poboljšanje vaših vještina u natjecateljskom okruženju."
+      }
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Prijavite se na newsletter",
+      "subtitle": "Budite prvi koji saznaju o novostima, turnirima i posebnim ponudama.",
+      "placeholder": "Vaša email adresa",
+      "subscribe": "Pretplatite se"
+    },
+    "description": "Premium padel iskustvo na obali Jadrana. Vrhunski tereni, profesionalni treneri i prijateljska atmosfera.",
+    "navigation": "Navigacija",
+    "services": "Usluge",
+    "contact": "Kontakt",
+    "serviceLinks": {
+      "courtBooking": "Rezervacija terena",
+      "academy": "Padel Akademija",
+      "tournaments": "Turniri"
+    },
+    "workingHours": {
+      "weekdays": "Pon - Pet",
+      "weekend": "Sub - Ned"
+    },
+    "legal": {
+      "privacyPolicy": "Politika privatnosti",
+      "cookiePolicy": "Politika kolačića"
+    },
+    "copyright": "Adriatic Padel Club. Sva prava pridržana."
+  },
+  "cookies": {
+    "title": "Koristimo kolačiće",
+    "description": "Ova stranica koristi kolačiće za poboljšanje korisničkog iskustva i analizu prometa.",
+    "settings": "Postavke",
+    "rejectAll": "Odbij sve",
+    "acceptAll": "Prihvati sve",
+    "ariaLabel": "Postavke kolačića"
+  },
+  "equipmentRental": {
+    "label": "Najam opreme",
+    "title": "Nemate opremu? Nema problema!",
+    "description": "U klubu možete iznajmiti kvalitetne rekete i loptice. Dođite igrati bez brige o opremi.",
+    "basic": "Basic reket",
+    "premium": "Premium reket",
+    "cta": "Rezerviraj termin"
+  },
+  "cta": {
+    "title": "Spremni za igru?",
+    "subtitle": "Rezervirajte svoj termin i uživajte u vrhunskom padel iskustvu na najboljim terenima u regiji.",
+    "button": "Rezerviraj Teren"
+  },
+  "testimonials": {
+    "label": "Iskustva članova",
+    "title": "Što kažu naši članovi"
+  },
+  "coaches": {
+    "label": "Naš tim",
+    "title": "Upoznajte naše trenere",
+    "subtitle": "Naš tim certificiranih trenera posvećen je vašem napretku. S dugogodišnjim iskustvom i strašću za padel, pomoći će vam dostići vaše ciljeve.",
+    "cta": "Zainteresirani za individualne treninge?",
+    "ctaLink": "Rezervirajte trening",
+    "achievements": {
+      "matija1": "Višestruki prvak Hrvatske u padelu",
+      "matija2": "Licencirani padel trener s više od 9 godina iskustva",
+      "matija3": "Prvak Central European Tour ciklusa",
+      "grgo1": "Bivši tenisač s 16 godina natjecateljskog iskustva",
+      "grgo2": "Državni prvak Hrvatske u padelu 2025.",
+      "grgo3": "Spoj teniskog znanja i moderne padel igre",
+      "jerko1": "Državni prvak Hrvatske u tenisu i padelu",
+      "jerko2": "Licencirani teniski i padel trener",
+      "jerko3": "U sportu od svoje 6. godine"
+    }
+  },
+  "common": {
+    "phone": "+385 91 2828 803",
+    "email": "info@adriaticpadelklub.hr",
+    "address": "Put Stombrata 18, 21220 Trogir, Croatia"
+  }
+}

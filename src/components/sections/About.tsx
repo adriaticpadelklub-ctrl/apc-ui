@@ -2,10 +2,9 @@
 
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Section, SectionHeading } from '@/components/ui/SectionHeading';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/Button';
-import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { gsap } from '@/lib/gsap';
 import { useCounter } from '@/hooks/useGSAP';
 
 interface StatProps {
@@ -27,16 +26,17 @@ function StatItem({ value, suffix = '', label }: StatProps) {
   );
 }
 
-const stats = [
-  { value: 10, suffix: '+', label: 'Godina iskustva' },
-  { value: 3, suffix: '+', label: 'Profesionalnih trenera' },
-  { value: 15, suffix: '+', label: 'Turnira godišnje' },
-];
-
 export function About() {
+  const t = useTranslations('about');
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const stats = [
+    { value: 10, suffix: '+', label: t('stats.yearsExperience') },
+    { value: 3, suffix: '+', label: t('stats.professionalCoaches') },
+    { value: 15, suffix: '+', label: t('stats.tournamentsYearly') },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -93,8 +93,8 @@ export function About() {
             className="relative aspect-[4/5] rounded-2xl overflow-hidden"
           >
             <Image
-              src="/images/vincenzo-morelli-aYTK2HNocNw-unsplash.jpg"
-              alt="Igrači padela na terenu"
+              src="/images/smash.jpg"
+              alt="Padel igrač u akciji"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -121,8 +121,8 @@ export function About() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-heading font-bold text-teal">Premium Kvaliteta</p>
-                  <p className="text-sm text-teal/70">Najbolji tereni na Jadranu</p>
+                  <p className="font-heading font-bold text-teal">{t('premiumQuality')}</p>
+                  <p className="text-sm text-teal/70">{t('bestCourtsAdriatic')}</p>
                 </div>
               </div>
             </div>
@@ -131,24 +131,21 @@ export function About() {
           {/* Content */}
           <div ref={contentRef}>
             <span className="animate-item inline-block text-sm font-semibold uppercase tracking-widest text-teal/60 mb-4">
-              O nama
+              {t('label')}
             </span>
             <h2 className="animate-item font-heading text-4xl md:text-5xl font-bold text-teal leading-tight mb-6">
-              Dobrodošli u Adriatic Padel Club
+              {t('title')}
             </h2>
             <p className="animate-item text-lg text-teal/70 mb-6 leading-relaxed">
-              Smješteni u Planu blizu Trogira, Adriatic Padel Club je premier destinacija za padel
-              entuzijaste svih razina. Naš klub kombinira vrhunske terene, profesionalne
-              trenere i prijateljsku atmosferu kako bi vam pružili nezaboravno padel iskustvo.
+              {t('description1')}
             </p>
             <p className="animate-item text-lg text-teal/70 mb-8 leading-relaxed">
-              Bilo da ste početnik koji želi naučiti osnove ili iskusni igrač koji traži
-              izazov, naš tim je tu da vam pomogne ostvariti vaše ciljeve.
+              {t('description2')}
             </p>
 
             <div className="animate-item flex flex-col sm:flex-row gap-4">
               <Button href="/o-nama" variant="secondary">
-                Više o nama
+                {t('moreAboutUs')}
               </Button>
             </div>
           </div>

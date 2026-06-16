@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://adriaticpadelclub.hr/sitemap.xml',
+    sitemap: 'https://www.adriaticpadelklub.hr/sitemap.xml',
   };
 }

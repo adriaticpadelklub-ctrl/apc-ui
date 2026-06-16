@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "title": "Adriatic Padel Club | Premium Padel in Trogir",
+    "titleTemplate": "%s | Adriatic Padel Club",
+    "description": "Premium padel experience on the Adriatic coast. Adriatic Padel Club near Trogir offers top-quality indoor courts, professional coaches and a padel academy for all skill levels.",
+    "ogDescription": "Premium padel experience on the Adriatic coast. Top-quality indoor courts, professional coaches and padel academy.",
+    "ogTitle": "Adriatic Padel Club | Premium Padel in Trogir",
+    "twitterTitle": "Adriatic Padel Club | Premium Padel in Trogir",
+    "twitterDescription": "Premium padel experience on the Adriatic coast."
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "courts": "Courts",
+    "academy": "Academy",
+    "tournaments": "Tournaments",
+    "contact": "Contact",
+    "bookCourt": "Book a Court",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "tagline": "Adriatic Padel Club",
+    "title": "Padel the\nAdriatic way",
+    "subtitle": "6 professional courts for every level and an unforgettable atmosphere.",
+    "bookCourt": "Book a Court",
+    "learnMore": "Learn More",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "About us",
+    "title": "Welcome to Adriatic Padel Club",
+    "description1": "Located in Plano near Trogir, Adriatic Padel Club is the premier destination for padel enthusiasts of all levels. Our club combines top-quality courts, professional coaches and a friendly atmosphere to provide you with an unforgettable padel experience.",
+    "description2": "Whether you're a beginner looking to learn the basics or an experienced player seeking a challenge, our team is here to help you achieve your goals.",
+    "moreAboutUs": "More about us",
+    "premiumQuality": "Premium Quality",
+    "bestCourtsAdriatic": "The best courts on the Adriatic",
+    "stats": {
+      "yearsExperience": "Years of experience",
+      "professionalCoaches": "Professional coaches",
+      "tournamentsYearly": "Tournaments per year"
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "Everything you need for the perfect game",
+    "subtitle": "From court booking to professional training - we have everything you need to develop your padel game.",
+    "learnMore": "Learn more",
+    "items": {
+      "booking": {
+        "title": "Court Booking",
+        "description": "Book a court online in just a few clicks. Available slots up to 14 days in advance."
+      },
+      "academy": {
+        "title": "Padel Academy",
+        "description": "Professional programs for all levels - from beginners to advanced players."
+      },
+      "academy": {
+        "title": "Padel Academy",
+        "description": "Professional training programs for all levels - from beginners to advanced players."
+      },
+      "tournaments": {
+        "title": "Tournaments & Leagues",
+        "description": "Compete with players at your level in regular tournaments and amateur leagues."
+      }
+    }
+  },
+  "courts": {
+    "label": "Our courts",
+    "title": "6 premium indoor courts",
+    "subtitle": "We have 6 premium indoor courts equipped with the latest technology for a top-notch padel experience all year round.",
+    "bookCourt": "Book a court",
+    "availableNote": "All courts available for booking 14 days in advance",
+    "features": {
+      "led": {
+        "title": "LED Lighting",
+        "description": "Professional lighting for playing at any time of day"
+      },
+      "indoor": {
+        "title": "Indoor Courts",
+        "description": "All 6 courts under roof for play regardless of weather"
+      },
+      "equipment": {
+        "title": "Professional Equipment",
+        "description": "Courts equipped to the highest standards"
+      }
+    },
+    "courtTypes": {
+      "premiumIndoor": "Premium Indoor",
+      "premium1v1": "Premium 1v1 Court"
+    }
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Have questions? We have answers.",
+    "subtitle": "Find answers to the most common questions about padel and our club. If you can't find the answer, feel free to contact us.",
+    "contactUs": "Contact us",
+    "items": {
+      "whatIsPadel": {
+        "question": "What is padel and how is it played?",
+        "answer": "Padel is a fast-growing racket sport that combines elements of tennis and squash. It is played on an enclosed court with glass walls, in pairs (2 vs 2). The ball can bounce off the walls, making the game dynamic and fun for all skill levels."
+      },
+      "needExperience": {
+        "question": "Do I need prior experience to play?",
+        "answer": "No! Padel is known as a sport that is easy to learn. Our coaches specialize in working with beginners and will help you master the basics in no time. We also offer free introductory sessions for new members."
+      },
+      "howToBook": {
+        "question": "How can I book a court?",
+        "answer": "You can book courts through our online platform Playtomic, by phone, or in person at the club. Bookings are available up to 14 days in advance, and members have priority for the most popular time slots."
+      },
+      "noEquipment": {
+        "question": "Can I come to play without equipment?",
+        "answer": "Yes! You can borrow rackets and balls at the club. Basic racket rental is 3€ and premium is 5€. We recommend wearing sports shoes with a non-marking sole and comfortable sportswear. We also have changing rooms with showers."
+      },
+      "amateurTournaments": {
+        "question": "Do you organize tournaments for amateurs?",
+        "answer": "Absolutely! We regularly organize tournaments for all skill levels, from complete beginners to advanced players. Tournaments are a great opportunity to meet new players and improve your skills in a competitive environment."
+      }
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Subscribe to our newsletter",
+      "subtitle": "Be the first to know about news, tournaments and special offers.",
+      "placeholder": "Your email address",
+      "subscribe": "Subscribe"
+    },
+    "description": "Premium padel experience on the Adriatic coast. Top-quality courts, professional coaches and a friendly atmosphere.",
+    "navigation": "Navigation",
+    "services": "Services",
+    "contact": "Contact",
+    "serviceLinks": {
+      "courtBooking": "Court booking",
+      "academy": "Padel Academy",
+      "tournaments": "Tournaments"
+    },
+    "workingHours": {
+      "weekdays": "Mon - Fri",
+      "weekend": "Sat - Sun"
+    },
+    "legal": {
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy"
+    },
+    "copyright": "Adriatic Padel Club. All rights reserved."
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "This website uses cookies to improve user experience and analyze traffic.",
+    "settings": "Settings",
+    "rejectAll": "Reject all",
+    "acceptAll": "Accept all",
+    "ariaLabel": "Cookie settings"
+  },
+  "equipmentRental": {
+    "label": "Equipment rental",
+    "title": "No equipment? No problem!",
+    "description": "You can rent quality rackets and balls at our club. Come play without worrying about gear.",
+    "basic": "Basic racket",
+    "premium": "Premium racket",
+    "cta": "Book a slot"
+  },
+  "cta": {
+    "title": "Ready to play?",
+    "subtitle": "Book your slot and enjoy a premium padel experience on the best courts in the region.",
+    "button": "Book a Court"
+  },
+  "testimonials": {
+    "label": "Member experiences",
+    "title": "What our members say"
+  },
+  "coaches": {
+    "label": "Our team",
+    "title": "Meet our coaches",
+    "subtitle": "Our team of certified coaches is dedicated to your progress. With years of experience and passion for padel, they will help you reach your goals.",
+    "cta": "Interested in private training?",
+    "ctaLink": "Book a session",
+    "achievements": {
+      "matija1": "Multiple Croatian padel champion",
+      "matija2": "Licensed padel coach with over 9 years of experience",
+      "matija3": "Central European Tour cycle champion",
+      "grgo1": "Former tennis player with 16 years of competitive experience",
+      "grgo2": "Croatian padel national champion 2025",
+      "grgo3": "Combination of tennis expertise and modern padel play",
+      "jerko1": "Croatian national champion in tennis and padel",
+      "jerko2": "Licensed tennis and padel coach",
+      "jerko3": "In sports since the age of 6"
+    }
+  },
+  "common": {
+    "phone": "+385 91 2828 803",
+    "email": "info@adriaticpadelklub.hr",
+    "address": "Put Stombrata 18, 21220 Trogir, Croatia"
+  }
+}

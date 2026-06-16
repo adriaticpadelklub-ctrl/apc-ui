@@ -1,50 +1,21 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { gsap } from '@/lib/gsap';
 import { cn } from '@/lib/utils';
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-const faqItems: FAQItem[] = [
-  {
-    question: 'Što je padel i kako se igra?',
-    answer:
-      'Padel je brzorastući reket sport koji kombinira elemente tenisa i squasha. Igra se na zatvorenom terenu s zidovima od stakla, u parovima (2 protiv 2). Loptica može odskočiti od zidova, što čini igru dinamičnom i zabavnom za sve razine igrača.',
-  },
-  {
-    question: 'Trebam li prethodno iskustvo za igranje?',
-    answer:
-      'Ne! Padel je poznat kao sport koji je lako naučiti. Naši treneri su specijalizirani za rad s početnicima i pomoći će vam savladati osnove u kratkom vremenu. Nudimo i besplatne uvodne sate za nove članove.',
-  },
-  {
-    question: 'Kako mogu rezervirati teren?',
-    answer:
-      'Terene možete rezervirati putem naše online platforme Playtomic, telefonom ili osobno u klubu. Rezervacije su moguće do 14 dana unaprijed, a članovi imaju prioritet pri rezervaciji najpopularnijih termina.',
-  },
-  {
-    question: 'Mogu li doći igrati bez opreme?',
-    answer:
-      'Da! U klubu možete posuditi rekete i loptice. Basic reket je 3€ a premium je 5€. Preporučujemo da ponesete sportsku obuću s neranjivim potplatom i udobnu sportsku odjeću. Imamo i svlačionice s tuševima.',
-  },
-  {
-    question: 'Organizirate li turnire za amatere?',
-    answer:
-      'Apsolutno! Redovito organiziramo turnire za sve razine igrača, od potpunih početnika do naprednih. Turniri su izvrsna prilika za upoznavanje novih igrača i poboljšanje vaših vještina u natjecateljskom okruženju.',
-  },
-];
+const faqKeys = ['whatIsPadel', 'needExperience', 'howToBook', 'noEquipment', 'amateurTournaments'] as const;
 
 interface FAQItemProps {
-  item: FAQItem;
+  questionKey: string;
   isOpen: boolean;
   onClick: () => void;
-  index: number;
+  t: ReturnType<typeof useTranslations<'faq'>>;
 }
 
-function FAQItemComponent({ item, isOpen, onClick, index }: FAQItemProps) {
+function FAQItemComponent({ questionKey, isOpen, onClick, t }: FAQItemProps) {
   const answerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -97,7 +68,7 @@ function FAQItemComponent({ item, isOpen, onClick, index }: FAQItemProps) {
             isOpen ? 'text-lime' : 'text-teal group-hover:text-teal-light'
           )}
         >
-          {item.question}
+          {t(`items.${questionKey}.question`)}
         </span>
         <span
           className={cn(
@@ -124,7 +95,7 @@ function FAQItemComponent({ item, isOpen, onClick, index }: FAQItemProps) {
       </button>
       <div ref={answerRef} className="overflow-hidden h-0">
         <div ref={contentRef} className="pb-6 opacity-0 -translate-y-2">
-          <p className="text-teal/70 leading-relaxed">{item.answer}</p>
+          <p className="text-teal/70 leading-relaxed">{t(`items.${questionKey}.answer`)}</p>
         </div>
       </div>
     </div>
@@ -132,6 +103,7 @@ function FAQItemComponent({ item, isOpen, onClick, index }: FAQItemProps) {
 }
 
 export function FAQ() {
+  const t = useTranslations('faq');
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
@@ -193,12 +165,12 @@ export function FAQ() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
+    mainEntity: faqKeys.map((key) => ({
       '@type': 'Question',
-      name: item.question,
+      name: t(`items.${key}.question`),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text: t(`items.${key}.answer`),
       },
     })),
   };
@@ -216,21 +188,20 @@ export function FAQ() {
           {/* Header */}
           <div ref={headerRef} className="lg:sticky lg:top-32 lg:self-start">
             <span className="animate-header inline-block text-sm font-semibold uppercase tracking-widest text-teal/60 mb-4">
-              Česta pitanja
+              {t('label')}
             </span>
             <h2 className="animate-header font-heading text-4xl md:text-5xl font-bold text-teal leading-tight mb-6">
-              Imate pitanja? Mi imamo odgovore.
+              {t('title')}
             </h2>
             <p className="animate-header text-lg text-teal/70 leading-relaxed mb-8">
-              Pronađite odgovore na najčešća pitanja o padelu i našem klubu. Ako ne
-              pronađete odgovor, slobodno nas kontaktirajte.
+              {t('subtitle')}
             </p>
             <div className="animate-header">
-              <a
+              <Link
                 href="/kontakt"
                 className="inline-flex items-center gap-2 text-teal font-medium hover:text-lime transition-colors duration-300"
               >
-                <span>Kontaktirajte nas</span>
+                <span>{t('contactUs')}</span>
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -244,19 +215,19 @@ export function FAQ() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* FAQ Items */}
           <div ref={faqRef}>
-            {faqItems.map((item, index) => (
-              <div key={index} className="faq-item">
+            {faqKeys.map((key, index) => (
+              <div key={key} className="faq-item">
                 <FAQItemComponent
-                  item={item}
+                  questionKey={key}
                   isOpen={openIndex === index}
                   onClick={() => handleToggle(index)}
-                  index={index}
+                  t={t}
                 />
               </div>
             ))}

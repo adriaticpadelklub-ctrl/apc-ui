@@ -6,24 +6,54 @@ import { gsap } from '@/lib/gsap';
 
 const galleryImages = [
   {
-    src: '/images/new-images/apc-court.jpg',
-    alt: 'Padel teren',
-    span: 'col-span-2 row-span-2',
-  },
-  {
-    src: '/images/new-images/10c457bd-486d-4b67-b30a-1e0554e3dbba.jpeg',
-    alt: 'Klub iznutra',
+    src: '/images/club-images/drone-outside-2.jpg',
+    alt: 'Pogled iz zraka na terene',
     span: 'col-span-2 row-span-1',
   },
   {
-    src: '/images/new-images/30a7590f-9de0-44a8-ad2a-539077be3b6d.jpeg',
-    alt: 'Padel tereni',
+    src: '/images/club-images/reception.jpg',
+    alt: 'Recepcija',
+    span: 'col-span-2 row-span-2',
+  },
+  {
+    src: '/images/club-images/shop.jpg',
+    alt: 'Pro shop',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: '/images/new-images/df590561-f57a-4c65-bd6b-875454172d07.jpeg',
-    alt: 'Adriatic Padel Club',
+    src: '/images/club-images/shop-2.jpg',
+    alt: 'Pro shop',
     span: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/images/club-images/entrance.jpg',
+    alt: 'Ulaz u klub',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/images/club-images/outside-seating.jpg',
+    alt: 'Vanjsko sjedenje',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/images/club-images/outside-seating-2.jpg',
+    alt: 'Vanjsko sjedenje',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/images/club-images/tusevi.jpg',
+    alt: 'Tuševi',
+    span: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/images/club-images/svlaciona.jpg',
+    alt: 'Svlačionica',
+    span: 'col-span-2 row-span-1',
+  },
+  {
+    src: '/images/club-images/parking.jpg',
+    alt: 'Parking',
+    span: 'col-span-2 row-span-1',
   },
 ];
 

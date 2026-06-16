@@ -23,7 +23,7 @@ interface LocalBusinessSchemaProps {
 export function LocalBusinessSchema({
   name = 'Adriatic Padel Club',
   description = 'Premium padel klub u Planu blizu Trogira. Vrhunski indoor tereni, profesionalni treneri i padel akademija.',
-  image = 'https://adriaticpadelclub.hr/og-image.jpg',
+  image = 'https://www.adriaticpadelklub.hr/og-image.jpg',
   telephone = '+385912828803',
   email = 'info@adriaticpadelklub.hr',
   address = {
@@ -42,13 +42,13 @@ export function LocalBusinessSchema({
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'SportsActivityLocation',
-    '@id': 'https://adriaticpadelclub.hr/#organization',
+    '@id': 'https://www.adriaticpadelklub.hr/#organization',
     name,
     description,
     image,
     telephone,
     email,
-    url: 'https://adriaticpadelclub.hr',
+    url: 'https://www.adriaticpadelklub.hr',
     address: {
       '@type': 'PostalAddress',
       ...address,

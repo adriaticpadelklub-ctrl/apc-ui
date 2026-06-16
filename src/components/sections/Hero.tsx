@@ -2,28 +2,30 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/Button';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
 import { cn } from '@/lib/utils';
+import { Link } from '@/i18n/routing';
 
 const BOOKING_URL = 'https://playtomic.io/tenant/8a79dede-5d90-4063-b037-84d3ca17c09d?utm_source=app_ios&utm_campaign=share';
 
 interface HeroProps {
-  title?: string;
-  subtitle?: string;
   showScrollIndicator?: boolean;
 }
 
 export function Hero({
-  title = 'Padel na\nAdriatic način',
-  subtitle = '6 profesionalnih terena za svaku razinu i nezaboravna atmosfera.',
   showScrollIndicator = true,
 }: HeroProps) {
+  const t = useTranslations('hero');
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+
+  const title = t('title');
+  const subtitle = t('subtitle');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -184,7 +186,7 @@ export function Hero({
           alt="Adriatic Padel Club indoor court"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-[80%_center] md:object-center"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-teal/40 via-teal/20 to-teal/50" />
@@ -197,7 +199,7 @@ export function Hero({
           {/* Tagline */}
           <div className="mb-6 overflow-hidden">
             <span className="inline-block text-lime text-sm font-semibold uppercase tracking-widest animate-slide-up">
-              Adriatic Padel Club
+              {t('tagline')}
             </span>
           </div>
 
@@ -220,7 +222,7 @@ export function Hero({
           {/* CTAs */}
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
             <Button href={BOOKING_URL} external variant="lime" size="lg">
-              Rezerviraj Teren
+              {t('bookCourt')}
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -236,7 +238,7 @@ export function Hero({
               </svg>
             </Button>
             <Button href="/o-nama" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-teal">
-              Saznaj Više
+              {t('learnMore')}
             </Button>
           </div>
         </div>
@@ -246,7 +248,7 @@ export function Hero({
       {showScrollIndicator && (
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-white/60 text-sm uppercase tracking-widest">
-            Scroll
+            {t('scroll')}
           </span>
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-lime animate-scroll-bounce" />

@@ -1,28 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
-
-const navigation = {
-  main: [
-    { name: 'Početna', href: '/' },
-    { name: 'O nama', href: '/o-nama' },
-    { name: 'Tereni', href: '/tereni' },
-    { name: 'Kontakt', href: '/kontakt' },
-  ],
-  services: [
-    { name: 'Rezervacija terena', href: '/' },
-    { name: 'Privatni treninzi', href: '/' },
-    { name: 'Grupni treninzi', href: '/' },
-    { name: 'Turniri', href: '/' },
-  ],
-  legal: [
-    { name: 'Politika privatnosti', href: '/politika-privatnosti' },
-    { name: 'Politika kolačića', href: '/politika-kolacica' },
-  ],
-};
 
 const socialLinks = [
   {
@@ -56,7 +38,27 @@ const contactInfo = {
 };
 
 export function Footer() {
+  const t = useTranslations('footer');
+  const tNav = useTranslations('navigation');
   const currentYear = new Date().getFullYear();
+
+  const navigationMain = [
+    { name: tNav('home'), href: '/' as const },
+    { name: tNav('about'), href: '/o-nama' as const },
+    { name: tNav('courts'), href: '/tereni' as const },
+    { name: tNav('contact'), href: '/kontakt' as const },
+  ];
+
+  const navigationServices = [
+    { name: t('serviceLinks.courtBooking'), href: '/tereni' as const },
+    { name: t('serviceLinks.academy'), href: '/akademija' as const },
+    { name: t('serviceLinks.tournaments'), href: '/turniri' as const },
+  ];
+
+  const navigationLegal = [
+    { name: t('legal.privacyPolicy'), href: '/politika-privatnosti' as const },
+    { name: t('legal.cookiePolicy'), href: '/politika-kolacica' as const },
+  ];
 
   return (
     <footer className="bg-teal text-white">
@@ -66,16 +68,16 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="text-center lg:text-left">
               <h3 className="font-heading text-2xl md:text-3xl font-bold mb-2">
-                Prijavite se na newsletter
+                {t('newsletter.title')}
               </h3>
               <p className="text-white/70">
-                Budite prvi koji saznaju o novostima, turnirima i posebnim ponudama.
+                {t('newsletter.subtitle')}
               </p>
             </div>
             <form className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
               <input
                 type="email"
-                placeholder="Vaša email adresa"
+                placeholder={t('newsletter.placeholder')}
                 className={cn(
                   'px-5 py-3 bg-white/10 border border-white/20 rounded-full',
                   'text-white placeholder:text-white/50',
@@ -85,7 +87,7 @@ export function Footer() {
                 required
               />
               <Button variant="lime" type="submit">
-                Pretplatite se
+                {t('newsletter.subscribe')}
               </Button>
             </form>
           </div>
@@ -107,8 +109,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-white/70 mb-6 leading-relaxed">
-              Premium padel iskustvo na obali Jadrana. Vrhunski tereni, profesionalni treneri i
-              prijateljska atmosfera.
+              {t('description')}
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
@@ -128,9 +129,9 @@ export function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-6">Navigacija</h4>
+            <h4 className="font-heading font-bold text-lg mb-6">{t('navigation')}</h4>
             <ul className="space-y-3">
-              {navigation.main.map((item) => (
+              {navigationMain.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
@@ -145,9 +146,9 @@ export function Footer() {
 
           {/* Services Column */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-6">Usluge</h4>
+            <h4 className="font-heading font-bold text-lg mb-6">{t('services')}</h4>
             <ul className="space-y-3">
-              {navigation.services.map((item, index) => (
+              {navigationServices.map((item, index) => (
                 <li key={index}>
                   <Link
                     href={item.href}
@@ -162,7 +163,7 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-6">Kontakt</h4>
+            <h4 className="font-heading font-bold text-lg mb-6">{t('contact')}</h4>
             <ul className="space-y-4 text-white/70">
               <li className="flex items-start gap-3">
                 <svg
@@ -237,8 +238,8 @@ export function Footer() {
                   />
                 </svg>
                 <div>
-                  <p>Pon - Pet: {contactInfo.workingHours.weekdays}</p>
-                  <p>Sub - Ned: {contactInfo.workingHours.weekend}</p>
+                  <p>{t('workingHours.weekdays')}: {contactInfo.workingHours.weekdays}</p>
+                  <p>{t('workingHours.weekend')}: {contactInfo.workingHours.weekend}</p>
                 </div>
               </li>
             </ul>
@@ -250,9 +251,9 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-main py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
-            <p>&copy; {currentYear} Adriatic Padel Club. Sva prava pridržana.</p>
+            <p>&copy; {currentYear} {t('copyright')}</p>
             <div className="flex items-center gap-6">
-              {navigation.legal.map((item) => (
+              {navigationLegal.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}

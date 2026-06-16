@@ -1,23 +1,22 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { gsap } from '@/lib/gsap';
 import { cn } from '@/lib/utils';
 
 interface Service {
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   icon: React.ReactNode;
-  href: string;
-  color: string;
+  href: '/' | '/o-nama' | '/tereni' | '/turniri' | '/kontakt' | '/akademija';
 }
 
 const services: Service[] = [
   {
-    title: 'Rezervacija Terena',
-    description:
-      'Rezervirajte teren online u samo nekoliko klikova. Dostupni termini 14 dana unaprijed.',
+    titleKey: 'booking',
+    descriptionKey: 'booking',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path
@@ -28,13 +27,11 @@ const services: Service[] = [
         />
       </svg>
     ),
-    href: '/',
-    color: 'from-lime/20 to-lime/5',
+    href: '/tereni',
   },
   {
-    title: 'Padel Akademija',
-    description:
-      'Profesionalni programi za sve razine - od početnika do naprednih igrača.',
+    titleKey: 'academy',
+    descriptionKey: 'academy',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path
@@ -45,30 +42,11 @@ const services: Service[] = [
         />
       </svg>
     ),
-    href: '/',
-    color: 'from-teal/20 to-teal/5',
+    href: '/akademija',
   },
   {
-    title: 'Privatni Treninzi',
-    description:
-      'Individualni pristup s našim certificiranim trenerima za brži napredak.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-        />
-      </svg>
-    ),
-    href: '/',
-    color: 'from-lime/20 to-lime/5',
-  },
-  {
-    title: 'Turniri i Lige',
-    description:
-      'Natjecajte se s igračima vaše razine u redovnim turnirima i amaterskim ligama.',
+    titleKey: 'tournaments',
+    descriptionKey: 'tournaments',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path
@@ -79,17 +57,17 @@ const services: Service[] = [
         />
       </svg>
     ),
-    href: '/',
-    color: 'from-teal/20 to-teal/5',
+    href: '/turniri',
   },
 ];
 
 interface ServiceCardProps {
   service: Service;
   index: number;
+  t: ReturnType<typeof useTranslations<'services'>>;
 }
 
-function ServiceCard({ service, index }: ServiceCardProps) {
+function ServiceCard({ service, index, t }: ServiceCardProps) {
   const cardRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -123,37 +101,31 @@ function ServiceCard({ service, index }: ServiceCardProps) {
       href={service.href}
       className={cn(
         'group relative p-8 rounded-2xl transition-all duration-500',
-        'bg-white hover:shadow-xl hover:-translate-y-2',
-        'border border-teal/5 hover:border-lime'
+        'bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:-translate-y-2',
+        'border border-white/10 hover:border-lime/50'
       )}
     >
-      {/* Background Gradient */}
-      <div
-        className={cn(
-          'absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100',
-          `bg-gradient-to-br ${service.color}`
-        )}
-      />
-
       {/* Content */}
       <div className="relative">
         {/* Icon */}
-        <div className="w-16 h-16 rounded-xl bg-teal/5 flex items-center justify-center text-teal mb-6 transition-colors duration-500 group-hover:bg-lime group-hover:text-teal">
+        <div className="w-16 h-16 rounded-xl bg-lime/20 flex items-center justify-center text-lime mb-6 transition-colors duration-500 group-hover:bg-lime group-hover:text-teal">
           {service.icon}
         </div>
 
         {/* Title */}
-        <h3 className="font-heading text-xl font-bold text-teal mb-3">
-          {service.title}
+        <h3 className="font-heading text-xl font-bold text-white mb-3 group-hover:text-lime transition-colors">
+          {t(`items.${service.titleKey}.title`)}
         </h3>
 
         {/* Description */}
-        <p className="text-teal/70 leading-relaxed mb-6">{service.description}</p>
+        <p className="text-white/70 leading-relaxed mb-6">
+          {t(`items.${service.descriptionKey}.description`)}
+        </p>
 
         {/* Arrow */}
-        <div className="flex items-center gap-2 text-teal font-medium">
+        <div className="flex items-center gap-2 text-lime font-medium">
           <span className="transition-transform duration-300 group-hover:translate-x-1">
-            Saznaj više
+            {t('learnMore')}
           </span>
           <svg
             className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
@@ -175,6 +147,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
 }
 
 export function Services() {
+  const t = useTranslations('services');
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -205,26 +178,25 @@ export function Services() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-beige overflow-hidden">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-teal overflow-hidden">
       <div className="container-main">
         {/* Header */}
         <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-16">
-          <span className="animate-header inline-block text-sm font-semibold uppercase tracking-widest text-teal/60 mb-4">
-            Usluge
+          <span className="animate-header inline-block text-sm font-semibold uppercase tracking-widest text-lime mb-4">
+            {t('label')}
           </span>
-          <h2 className="animate-header font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-teal leading-tight mb-6">
-            Sve što trebate za savršenu igru
+          <h2 className="animate-header font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            {t('title')}
           </h2>
-          <p className="animate-header text-lg text-teal/70 leading-relaxed">
-            Od rezervacije terena do profesionalnih treninga - imamo sve što vam treba
-            za razvoj vaše padel igre.
+          <p className="animate-header text-lg text-white/70 leading-relaxed">
+            {t('subtitle')}
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
-            <ServiceCard key={service.title} service={service} index={index} />
+            <ServiceCard key={service.titleKey} service={service} index={index} t={t} />
           ))}
         </div>
       </div>

@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import { gsap } from '@/lib/gsap';
 import { useCookieConsent } from '@/hooks/useCookieConsent';
 import { CookieSettings } from './CookieSettings';
 
 export function CookieConsent() {
+  const t = useTranslations('cookies');
   const { showBanner, showSettings, acceptAll, rejectAll, openSettings } = useCookieConsent();
   const bannerRef = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
@@ -62,16 +64,16 @@ export function CookieConsent() {
         opacity-0
       "
       role="dialog"
-      aria-label="Postavke kolačića"
+      aria-label={t('ariaLabel')}
       aria-modal="false"
     >
       <div className="flex items-start gap-4">
         <div className="flex-1">
           <h2 className="font-heading font-bold text-xl text-teal mb-2">
-            Koristimo kolačiće
+            {t('title')}
           </h2>
           <p className="text-sm text-teal/70 leading-relaxed">
-            Ova stranica koristi kolačiće za poboljšanje korisničkog iskustva i analizu prometa.
+            {t('description')}
           </p>
         </div>
       </div>
@@ -88,7 +90,7 @@ export function CookieConsent() {
               transition-colors duration-200
             "
           >
-            Postavke
+            {t('settings')}
           </button>
           <button
             onClick={rejectAll}
@@ -99,7 +101,7 @@ export function CookieConsent() {
               transition-colors duration-200
             "
           >
-            Odbij sve
+            {t('rejectAll')}
           </button>
           <button
             onClick={acceptAll}
@@ -110,7 +112,7 @@ export function CookieConsent() {
               shadow-lg shadow-lime/20
             "
           >
-            Prihvati sve
+            {t('acceptAll')}
           </button>
         </div>
       )}
