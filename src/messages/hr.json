@@ -191,5 +191,11 @@
     "phone": "+385 91 2828 803",
     "email": "info@adriaticpadelklub.hr",
     "address": "Put Stombrata 18, 21220 Trogir, Croatia"
+  },
+  "notFound": {
+    "title": "Loptica je izvan terena!",
+    "description": "Stranica koju trazite ne postoji ili je premjestena. Vratite se na teren!",
+    "backHome": "Natrag na pocetnu",
+    "contact": "Kontaktirajte nas"
   }
 }
